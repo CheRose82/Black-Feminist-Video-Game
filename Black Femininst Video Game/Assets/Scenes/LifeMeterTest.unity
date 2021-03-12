@@ -178,7 +178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e01215e11352974db0d1b38644ece77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c00c8eb70cfd446e9a7e3990c4116d3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -243,7 +243,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &145879932
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e01215e11352974db0d1b38644ece77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c00c8eb70cfd446e9a7e3990c4116d3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -368,7 +368,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &337996771
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e01215e11352974db0d1b38644ece77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c00c8eb70cfd446e9a7e3990c4116d3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -642,7 +642,7 @@ SpriteRenderer:
   m_Size: {x: 32, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &667496470
@@ -866,7 +866,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1918995010}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1877435128
+--- !u!114 &1877435129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1877435127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feeb6bbca5b080a479b902e4edfa8895, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f52e8bff0af40d1a907e16c6d6cdcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
@@ -883,8 +883,8 @@ MonoBehaviour:
   - {fileID: 493035944}
   - {fileID: 145879934}
   - {fileID: 100198460}
-  fullHeart: {fileID: 21300000, guid: 0e01215e11352974db0d1b38644ece77, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 241a7d3cd13dcf740945e7afefcfab6c, type: 3}
+  fullHeart: {fileID: 21300000, guid: c00c8eb70cfd446e9a7e3990c4116d3a, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 8dec275ad989949e89e63574622a1321, type: 3}
 --- !u!4 &1877435136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
