@@ -50,6 +50,15 @@ public class FallingRockScript : MonoBehaviour
                 //sc1.enabled = false;
                 sc2.enabled = false;
                 touchingPlayer = true;
+                if(transform.position.x > other.transform.position.x)
+                {
+                    rb.AddForce(300, 50, 0);
+                }
+                else
+                {
+                    rb.AddForce(-300, 50, 0);
+                }
+                Debug.Log("It should've moved to the right");
             }
             
         }

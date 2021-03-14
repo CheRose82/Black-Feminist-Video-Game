@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7717147568970176490}
   m_Layer: 0
   m_Name: Falling Rock
-  m_TagString: Untagged
+  m_TagString: Falling Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

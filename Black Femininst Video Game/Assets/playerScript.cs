@@ -19,6 +19,7 @@ public class playerScript : MonoBehaviour
     Rigidbody rb;
     public bool facingRight = true;
     public bool readyToShoot;
+    public bool hasControl = true;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class playerScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //nicole = GameObject.Find("Nicole");
         facingRight = true;readyToShoot = true;
+        hasControl = true;
     }
 
     // Update is called once per frame
@@ -34,7 +36,11 @@ public class playerScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(-runSpeed, 0, 0);
+            if (hasControl)
+            {
+                transform.Translate(-runSpeed, 0, 0);
+            }
+            
             if(facingRight == true)
             {
                 facingRight = false;
@@ -46,7 +52,11 @@ public class playerScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(runSpeed, 0, 0);
+            if (hasControl)
+            {
+                transform.Translate(runSpeed, 0, 0);
+            }
+            
             if (facingRight == false)
             {
                 facingRight = true;
@@ -71,12 +81,16 @@ public class playerScript : MonoBehaviour
 
         if (Grounded)
         {
-            //jump
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            if (hasControl)
             {
-                //anim.SetTrigger("JumpingTrigger");
-                rb.velocity = Vector3.up * 7.5f;
+                //jump
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    //anim.SetTrigger("JumpingTrigger");
+                    rb.velocity = Vector3.up * 7.5f;
+                }
             }
+            
         }
         //throw ground/air energy ball energy ball
         if (Input.GetKeyDown(KeyCode.Space))
@@ -102,6 +116,7 @@ public class playerScript : MonoBehaviour
         {
             //anim.SetBool("onGround", true);
             Grounded = true;
+            rb.velocity = Vector3.zero;
         }
 
         if (other.CompareTag("NicoleAct"))
@@ -189,5 +204,15 @@ public class playerScript : MonoBehaviour
     void ResetShoot()
     {
         readyToShoot = true;
+    }
+
+    public void LoseControl(float time)
+    {
+        hasControl = false;
+        Invoke("RegainControl", time);
+    }
+    void RegainControl()
+    {
+        hasControl = true;
     }
 }
