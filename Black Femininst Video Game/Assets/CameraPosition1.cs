@@ -39,10 +39,13 @@ public class CameraPosition1 : MonoBehaviour
     {
         if (Cam_Behavior == 1)
         {
-
-            Vector3 playerPosition = player.position + offset;
-            Vector3 newPosition = new Vector3(player.position.x, transform.position.y, -13f);
-            transform.position = Vector3.Lerp(transform.position, newPosition, smoothSpeed * Time.deltaTime);
+            if(player.GetComponent<playerScript>().facingRight == true)
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x, transform.position.y, -13f);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothSpeed * Time.deltaTime);
+            }
+            
             
             //Vector3 SmoothPosition = Vector3.Lerp(transform.position, playerPosition, smoothSpeed);
             //transform.position = SmoothPosition;
@@ -64,6 +67,10 @@ public class CameraPosition1 : MonoBehaviour
         {
             //Vector3 playerPosition = player.position + offset;
             //Cam.player.position = Vector3.Lerp(player.position, playerPosition.player.position, speed * Time.deltaTime);
+
+
+
+
 
             //Camera locks onto player when in frame
             if (player.transform.position.y < yMax && player.transform.position.y > yMin)
@@ -96,6 +103,11 @@ public class CameraPosition1 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.position, Speed);
 
         }
+    }
+
+    public void UpdateCam3()
+    {
+        //transform.positin = new Vector3(other + offset)
     }
 
 }
