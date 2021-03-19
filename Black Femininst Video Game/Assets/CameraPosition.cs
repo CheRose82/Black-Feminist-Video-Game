@@ -23,7 +23,7 @@ public class CameraPosition : MonoBehaviour
     void Start()
     {
         Cam = Camera.main;
-        Camera.main.orthographic = true;
+        //Camera.main.orthographic = true;
         playerBox = calculatePlayerBox();
     }
 
@@ -67,7 +67,8 @@ public class CameraPosition : MonoBehaviour
         }
         if (Cam_Behavior == 4 && Zoom)
         {
-            Cam.orthographicSize = Mathf.Lerp(Cam.orthographicSize, 4, Speed);
+            //Cam.orthographicSize = Mathf.Lerp(Cam.orthographicSize, 4, Speed);
+            //write a function that uses Vector.MoveTowards to slowly move the camera in or out for close up and pan outs.
 
         }
     }
