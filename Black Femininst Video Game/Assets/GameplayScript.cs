@@ -85,6 +85,21 @@ public class GameplayScript : MonoBehaviour
                 GetComponent<playerScript>().LoseControl(1.0f);
             }
         }
+        if (other.CompareTag("Chauvanismus Attack Box"))
+        {
+            if (TakingDamage)
+            {
+                if (transform.position.x < other.transform.position.x)//he's getting hit from the right
+                {
+                    TakeDamage(1, -100, 300);
+                }
+                else
+                {
+                    TakeDamage(1, 100, 300);
+                }
+                GetComponent<playerScript>().LoseControl(0.7f);
+            }
+        }
     }
     void CheckDamage()
     {

@@ -574,7 +574,10 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: USE_AURORA
+    7: USE_AURORA
+    13: USE_AURORA
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
