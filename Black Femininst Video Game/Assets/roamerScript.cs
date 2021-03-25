@@ -16,6 +16,7 @@ public class roamerScript : MonoBehaviour
     private float groundHeight;
     private float attackRange;
     private float timeTillTalking;
+    private bool grounded;
     //AI_behaviors
     // 1 = walking
     // 2 = attacking
@@ -27,6 +28,7 @@ public class roamerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.localEulerAngles = new Vector3(0, -90, 0);
         rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
         //walkSpeed = 15;
@@ -56,12 +58,31 @@ public class roamerScript : MonoBehaviour
         }
         if (AI_Behavior == 1)
         {
+            if (grounded)// just wanna make sure e's on the ground before he starts pushing forward.
+                //otherwise the rigidbody makes him kinda float.
+            {
+                //count down the time till he says somethign insulting
+                timeTillTalking -= Time.deltaTime;
+                //make the roamer walk forward until then
+                if (timeTillTalking > 0)
+                {
+                    rb.velocity = transform.forward * walkSpeed;
+                }
+                else
+                {
+                    //shout something and then somehow make it go back to walk(reset the timer) after it's finished
+                }
+            }
             //count down the time till he says somethign insulting
             timeTillTalking -= Time.deltaTime;
             //make the roamer walk forward until then
             if(timeTillTalking > 0)
             {
-                rb.velocity = transform.forward * walkSpeed;
+                if (grounded)
+                {
+                    rb.velocity = transform.forward * walkSpeed;
+                }
+                
             }
             else
             {
@@ -92,6 +113,10 @@ public class roamerScript : MonoBehaviour
         if(other.CompareTag("Energy Ball"))
         {
             Die();
+        }
+        if (other.CompareTag("Ground"))
+        {
+            grounded = true;
         }
     }
 

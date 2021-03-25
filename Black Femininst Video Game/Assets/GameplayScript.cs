@@ -100,6 +100,21 @@ public class GameplayScript : MonoBehaviour
                 GetComponent<playerScript>().LoseControl(0.7f);
             }
         }
+        if (other.CompareTag("Barrel Explosion"))
+        {
+            if (TakingDamage)
+            {
+                if (transform.position.x < other.transform.position.x)//he's getting hit from the right
+                {
+                    TakeDamage(1, -5000, 500);
+                }
+                else
+                {
+                    TakeDamage(1, 5000, 500);
+                }
+                GetComponent<playerScript>().LoseControl(0.7f);
+            }
+        }
     }
     void CheckDamage()
     {

@@ -575,9 +575,9 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: USE_AURORA
-    7: USE_AURORA
-    13: USE_AURORA
+    1: USE_AURORA;USE_NEW_INPUT
+    7: USE_AURORA;USE_NEW_INPUT
+    13: USE_AURORA;USE_NEW_INPUT
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

@@ -17,6 +17,9 @@ TagManager:
   - Roamer
   - Bird
   - Chauvanismus Attack Box
+  - Left Barrel Boundary
+  - Barrel Explosion
+  - Canon
   layers:
   - Default
   - TransparentFX

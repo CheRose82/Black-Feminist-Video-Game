@@ -164,6 +164,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Chauvanisumus Boundary
       objectReference: {fileID: 0}
+    - target: {fileID: 4585331340979961758, guid: 18cbf8d6b57e347d9899b64847ef48a4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Left Barrel Boundary
+      objectReference: {fileID: 0}
     - target: {fileID: 6287512928578578431, guid: 18cbf8d6b57e347d9899b64847ef48a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -346,7 +351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543753599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 160.46, y: 7.05, z: 0}
+  m_LocalPosition: {x: 160.46, y: 7.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1158528537}
@@ -373,12 +378,22 @@ MonoBehaviour:
   meleePos: {fileID: 770939925}
   meleeHitBox: {fileID: 8694194105199362079, guid: 9906b55a9e8bb49a8a7a542ec5d58723,
     type: 3}
+  barrel: {fileID: 2186026751365898113, guid: ff25073a504c6446fa1305f908cbab68, type: 3}
+  canon: {fileID: 8223502098857588832, guid: 042f0e0b1ab604d6a84ecd711211c6b3, type: 3}
+  leftFlightSpawn: {fileID: 1652188347}
+  rightFlightSpawn: {fileID: 1913518582}
+  topFlightRespawn: {fileID: 1786126200}
+  impactParticles: {fileID: 2178862674215843121, guid: 29d8c52292f2c4734887997d5969714d,
+    type: 3}
+  enemyAdds: {fileID: 0}
   AI_Behavior: 1
   health: 0
   walkTimer: 0
   walking: 0
   movingLeft: 0
   walkSpeed: 0.035
+  leftLowChargingTimer: 0
+  rightLowchargingTimer: 0
 --- !u!1 &577588564
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158528536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.12, z: 0}
   m_LocalScale: {x: 4.0200744, y: 9.062901, z: 1}
   m_Children: []
   m_Father: {fileID: 543753600}
@@ -1003,6 +1018,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cbf8d6b57e347d9899b64847ef48a4, type: 3}
+--- !u!1 &1652188347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652188348}
+  m_Layer: 0
+  m_Name: leftFlightSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652188348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652188347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 127.95, y: 17.93, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764635339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1141,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1786126200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786126201}
+  m_Layer: 0
+  m_Name: TopFlightReSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1786126201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786126200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 160.6, y: 28.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1794770347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1165,6 +1240,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cbf8d6b57e347d9899b64847ef48a4, type: 3}
+--- !u!1 &1913518582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913518583}
+  m_Layer: 0
+  m_Name: rightFlightSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1913518583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913518582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 172.53, y: 18.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3348741384484567088
 PrefabInstance:
   m_ObjectHideFlags: 0
