@@ -155,33 +155,6 @@ namespace PixelCrushers
         #endregion
 
         /// <summary>
-        /// Finds all objects of a type, including on inactive GameObjects.
-        /// </summary>
-        public static T[] FindObjectsOfTypeAlsoInactive<T>() where T : Component
-        {
-            var list = new System.Collections.Generic.List<T>();
-
-            var rootGameObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
-            for (int i = 0; i < rootGameObjects.Length; i++)
-            {
-                FindObjectsSearchHierarchy<T>(rootGameObjects[i].transform, list);
-            }
-
-            return list.ToArray();
-        }
-
-        private static void FindObjectsSearchHierarchy<T>(Transform t, System.Collections.Generic.List<T> list) where T : Component
-        {
-            if (t == null) return;
-            var components = t.GetComponents<T>();
-            if (components.Length > 0) list.AddRange(components);
-            foreach (Transform child in t)
-            {
-                FindObjectsSearchHierarchy<T>(child, list);
-            }
-        }
-
-        /// <summary>
         /// Like GetComponentInChildren(), but also searches parents.
         /// </summary>
         /// <returns>The component, or <c>null</c> if not found.</returns>

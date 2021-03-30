@@ -211,7 +211,6 @@ namespace PixelCrushers
         public static SavedGameData currentSavedGameData
         {
             get { return m_savedGameData; }
-            set { m_savedGameData = value; }
         }
 
         /// <summary>

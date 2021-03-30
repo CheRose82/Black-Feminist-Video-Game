@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraPosition : MonoBehaviour
 {
     public Transform player;
+    public GameObject playerObj;
     public Vector3 offset;
     public Vector3 playerBox;
     public float smoothFactor = 1;
@@ -25,16 +26,28 @@ public class CameraPosition : MonoBehaviour
         Cam = Camera.main;
         //Camera.main.orthographic = true;
         playerBox = calculatePlayerBox();
+        
     }
 
     void LateUpdate()
     {
         if (Cam_Behavior == 1)
         {
+            if(playerObj.GetComponent<playerScript>().facingRight == true)
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x + 7.5f, transform.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+            }
+            else
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x - 7.5f, transform.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+            }
 
-            Vector3 playerPosition = player.position + offset;
-            Vector3 newPosition = new Vector3(player.position.x, transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+
+            
             
             //if (camera.pos > max) camera.pos = max;
             // (camera.pos<min) camera.pos = min;

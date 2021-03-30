@@ -25,10 +25,6 @@ namespace PixelCrushers
         [SerializeField]
         private bool m_saveLanguageInPlayerPrefs = true;
 
-        [Tooltip("When updating UIs, perform longer search that also finds LocalizeUI components on inactive GameObjects.")]
-        [SerializeField]
-        private bool m_alsoUpdateInactiveLocalizeUI = true;
-
         private string m_currentLanguage = string.Empty;
 
         private static UILocalizationManager m_instance = null;
@@ -131,16 +127,10 @@ namespace PixelCrushers
                     PlayerPrefs.SetString(currentLanguagePlayerPrefsKey, language);
                 }
             }
-
-            if (!m_alsoUpdateInactiveLocalizeUI)
+            var localizeUIs = FindObjectsOfType<LocalizeUI>();
+            for (int i = 0; i < localizeUIs.Length; i++)
             {
-                var localizeUIs = m_alsoUpdateInactiveLocalizeUI
-                    ? GameObjectUtility.FindObjectsOfTypeAlsoInactive<LocalizeUI>()
-                    : FindObjectsOfType<LocalizeUI>();
-                for (int i = 0; i < localizeUIs.Length; i++)
-                {
-                    localizeUIs[i].UpdateText();
-                }
+                localizeUIs[i].UpdateText();
             }
         }
 

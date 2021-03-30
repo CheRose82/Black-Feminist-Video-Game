@@ -189,7 +189,7 @@ public class ChauvanimsusScript : MonoBehaviour
             if(repositioning == true)
             {
                 repositioningTimer -= Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, rightBoundary.transform.position + new Vector3(-4.5f, ChauvHeight, 0), walkSpeed * 3);
+                transform.position = Vector3.MoveTowards(transform.position, rightBoundary.transform.position + new Vector3(-4.5f, 0, 0), walkSpeed * 3);
 
                 //when the timer repositioning timer runs out, make repositioing false and then start the charge
                 if(repositioningTimer < 0)
@@ -206,12 +206,12 @@ public class ChauvanimsusScript : MonoBehaviour
                 if(chargingTimer > 0)
                 {
                     chargingTimer -= Time.deltaTime;
-                    transform.position = Vector3.MoveTowards(transform.position, walkBoundary.transform.position + new Vector3(-2f, ChauvHeight, 0), walkSpeed * 2);
+                    transform.position = Vector3.MoveTowards(transform.position, walkBoundary.transform.position + new Vector3(2, 0, 0), walkSpeed * 2);
                     
                 }
                 else //when it stops return to the origin point on the right side fo the screen.
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, rightBoundary.transform.position + new Vector3(-4.5f, ChauvHeight, 0), walkSpeed * 1.5f);
+                    transform.position = Vector3.MoveTowards(transform.position, rightBoundary.transform.position + new Vector3(-4.5f, 0, 0), walkSpeed * 1.5f);
                     Debug.Log("chargingTimer is " + chargingTimer);
                     Debug.Log("distance between chauv and the rightborder is " + Vector3.Distance(transform.position, rightBoundary.transform.position));
 
@@ -433,7 +433,7 @@ public class ChauvanimsusScript : MonoBehaviour
 
     public void DecideNextAI()
     {
-        //AI_Behavior = 7;
+        //AI_Behavior = 4;
 
         AI_Behavior = Random.Range(1, 8);
         if (AI_Behavior == 6 && health > 99)
