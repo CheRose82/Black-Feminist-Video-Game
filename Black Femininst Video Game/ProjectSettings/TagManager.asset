@@ -20,6 +20,7 @@ TagManager:
   - Left Barrel Boundary
   - Barrel Explosion
   - Canon
+  - Camera Switch
   layers:
   - Default
   - TransparentFX

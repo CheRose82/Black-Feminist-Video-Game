@@ -25,7 +25,7 @@ public class CameraPosition : MonoBehaviour
     {
         Cam = Camera.main;
         //Camera.main.orthographic = true;
-        playerBox = calculatePlayerBox();
+        //playerBox = calculatePlayerBox();
         
     }
 
@@ -54,28 +54,45 @@ public class CameraPosition : MonoBehaviour
         }
         if (Cam_Behavior == 2)
         {
-            Vector3 playerPosition = player.position + offset;
-            Vector3 smoothPosition = Vector3.Lerp(transform.position, playerPosition, smoothFactor * Time.fixedDeltaTime);
-            transform.position = smoothPosition;
+
+            if(playerObj.GetComponent<playerScript>().facingRight == true)
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x + 7.5f, player.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+            }
+            else
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x - 7.5f, player.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+            }
+            
+
+            //Vector3 smoothPosition = Vector3.Lerp(transform.position, playerPosition, smoothFactor * Time.fixedDeltaTime);
+            //transform.position = smoothPosition;
         }
         if (Cam_Behavior == 3)
         {
-            Vector3 follow = player.transform.position;
-            float xDifference = Vector3.Distance(Vector3.right * transform.position.x, Vector3.right * follow.x);
-            float yDifference = Vector3.Distance(Vector3.up * transform.position.y, Vector3.up * follow.y);
+            
+            //click to the next location
 
-            Vector3 newPosition = transform.position;
-            if (Mathf.Abs(xDifference) >= playerBox.x)
-            {
-                newPosition.x = follow.x;
-            }
-            if (Mathf.Abs(yDifference) >= playerBox.y)
-            {
-                newPosition.y = follow.y;
-            }
+            //Vector3 follow = player.transform.position;
+            //float xDifference = Vector3.Distance(Vector3.right * transform.position.x, Vector3.right * follow.x);
+            //float yDifference = Vector3.Distance(Vector3.up * transform.position.y, Vector3.up * follow.y);
 
-            newPosition = new Vector3(player.position.x, player.position.y, -10f);
-            transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, dampTime);
+            //Vector3 newPosition = transform.position;
+            //if (Mathf.Abs(xDifference) >= playerBox.x)
+            //{
+            //    newPosition.x = follow.x;
+            //}
+            //if (Mathf.Abs(yDifference) >= playerBox.y)
+            //{
+            //    newPosition.y = follow.y;
+            //}
+
+            //newPosition = new Vector3(player.position.x, player.position.y, -10f);
+            //transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, dampTime);
 
         }
         if (Cam_Behavior == 4 && Zoom)
@@ -86,13 +103,13 @@ public class CameraPosition : MonoBehaviour
         }
     }
 
-    Vector3 calculatePlayerBox()
-    {
-        Rect aspect = Camera.main.pixelRect;
-        Vector3 b = new Vector3(Camera.main.orthographicSize * aspect.width / aspect.height, Camera.main.orthographicSize);
-        b.x -= offset.x;
-        b.y -= offset.y;
-        return b;
-    }
+    //Vector3 calculatePlayerBox()
+    //{
+    //    Rect aspect = Camera.main.pixelRect;
+    //    Vector3 b = new Vector3(Camera.main.orthographicSize * aspect.width / aspect.height, Camera.main.orthographicSize);
+    //    b.x -= offset.x;
+    //    b.y -= offset.y;
+    //    return b;
+    //}
    
 }
