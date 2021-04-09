@@ -5,6 +5,14 @@ using UnityEngine;
 public class playerCamControllerScipt : MonoBehaviour
 {
     public GameObject cam;
+
+
+    //cam 1 scroll forward
+    //cam 2 scroll forward plus up and down
+    //cam 3 teleport to location and be still
+    //cam 4 zoom
+    //cam 5 be still at current location
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +33,11 @@ public class playerCamControllerScipt : MonoBehaviour
             if(other.GetComponent<cameraSwitchPlaneScript>().CamBehavior == 3)
             {
                 cam.transform.position = other.GetComponent<cameraSwitchPlaneScript>().camLocation;
+            }
+
+            if(other.GetComponent<cameraSwitchPlaneScript>().CamBehavior == 5)
+            {
+                //cam.transform.position = cam.transform.position;
             }
         }
     }

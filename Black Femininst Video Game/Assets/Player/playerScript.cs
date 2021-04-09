@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
+
     public float runSpeed;
     //public GameObject sprite;
     //public GameObject nicole;
@@ -34,7 +35,7 @@ public class playerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             if (hasControl)
             {
@@ -50,7 +51,7 @@ public class playerScript : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             if (hasControl)
             {
@@ -65,14 +66,14 @@ public class playerScript : MonoBehaviour
         }
 
         //trigger for the run anim
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)|| Input.GetKeyDown(KeyCode.RightArrow))
         {
             //anim.SetBool("Running", true);
             walking = true;
 
 
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             //anim.SetBool("Running", false);
             walking = false;
@@ -84,7 +85,7 @@ public class playerScript : MonoBehaviour
             if (hasControl)
             {
                 //jump
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     //anim.SetTrigger("JumpingTrigger");
                     rb.velocity = Vector3.up * 7.5f;
@@ -112,6 +113,7 @@ public class playerScript : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
+        ///TERRAIN (mostly ground)
         if (other.CompareTag("Ground"))
         {
             //anim.SetBool("onGround", true);
@@ -124,6 +126,8 @@ public class playerScript : MonoBehaviour
             //nicole.GetComponent<NicoleNPCScript>().activated = true;
         }
 
+        //ENEMIES
+       
         if(other.CompareTag("Falling Rock"))
         {
             Debug.Log("The player knows that they are dead.");
@@ -141,6 +145,15 @@ public class playerScript : MonoBehaviour
             {
                 rb.AddForce(-10, 5, 0);
             }
+        }
+
+
+        //ITEMS
+        if (other.CompareTag("Axe"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("We touched the axe");
+            //animate holding up the Axe
         }
     }
 
