@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unregisterOnDisable: 0
-  soundCloudControl: {fileID: 0}
+  soundCloudControl: {fileID: 1780928735}
 --- !u!1 &895406651
 GameObject:
   m_ObjectHideFlags: 0

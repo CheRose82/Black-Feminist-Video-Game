@@ -39,17 +39,7 @@ public class testDialogueFunctionScript : MonoBehaviour
     }
 
     public GameObject exp;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //BlowItUp();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void BlowItUp()
     {

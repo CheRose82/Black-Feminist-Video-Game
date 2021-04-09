@@ -18,7 +18,7 @@ public class soundCloudController : MonoBehaviour
         
     }
 
-   public void SoundCloudStart()
+   public void StartSondCloud()
     {
         sc1.GetComponent<SoundCloudScript>().activated = true;
         sc2.GetComponent<SoundCloudScript>().activated = true;

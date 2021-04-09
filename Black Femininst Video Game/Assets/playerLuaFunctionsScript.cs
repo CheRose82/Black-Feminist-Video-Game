@@ -13,7 +13,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
         // Make the functions available to Lua: (Replace these lines with your own.)
         Lua.RegisterFunction("DebugLog", this, SymbolExtensions.GetMethodInfo(() => DebugLog(string.Empty)));
         Lua.RegisterFunction("AddOne", this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
-        Lua.RegisterFunction("SoundCloudStart", this, typeof(testDialogueFunctionScript).GetMethod("SoundCloudStart"));
+        Lua.RegisterFunction("SoundCloudStart", this, typeof(playerLuaFunctionsScript).GetMethod("SoundCloudStart"));
 
     }
 
@@ -39,6 +39,17 @@ public class playerLuaFunctionsScript : MonoBehaviour
     }
 
     public GameObject soundCloudControl;
+
+
+    private void Start()
+    {
+        //Debug.Break();
+    }
+
+    public void SoundCloudStart()
+    {
+        soundCloudControl.GetComponent<soundCloudController>().StartSondCloud();
+    }
 
 }
 
