@@ -228,4 +228,9 @@ public class playerScript : MonoBehaviour
     {
         hasControl = true;
     }
+
+    public void Bones()
+    {
+        //play animation for turning to bones
+    }
 }

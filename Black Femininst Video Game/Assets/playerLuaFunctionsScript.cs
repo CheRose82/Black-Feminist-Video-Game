@@ -14,6 +14,11 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("DebugLog", this, SymbolExtensions.GetMethodInfo(() => DebugLog(string.Empty)));
         Lua.RegisterFunction("AddOne", this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
         Lua.RegisterFunction("SoundCloudStart", this, typeof(playerLuaFunctionsScript).GetMethod("SoundCloudStart"));
+        Lua.RegisterFunction("TurnToBones", this, typeof(playerLuaFunctionsScript).GetMethod("TurnToBones"));
+        Lua.RegisterFunction("SoundSpawnStart", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStart"));
+        Lua.RegisterFunction("SoundSpawnStop", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStop"));
+        Lua.RegisterFunction("BeesSwarm", this, typeof(playerLuaFunctionsScript).GetMethod("BeesSwarm"));
+        Lua.RegisterFunction("UnicornNoTail", this, typeof(playerLuaFunctionsScript).GetMethod("UnicornNoTail"));
 
     }
 
@@ -39,6 +44,9 @@ public class playerLuaFunctionsScript : MonoBehaviour
     }
 
     public GameObject soundCloudControl;
+    public GameObject soundSpawnControl;
+    public GameObject bees;
+    public GameObject unicorn;
 
 
     private void Start()
@@ -49,6 +57,31 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void SoundCloudStart()
     {
         soundCloudControl.GetComponent<soundCloudController>().StartSondCloud();
+    }
+
+    public void TurnToBones()
+    {
+        Invoke("Bones", 10);
+    }
+
+    public void SoundSpawnStart()
+    {
+        soundSpawnControl.GetComponent<soundSpawnerController>().SpawnSound();
+    }
+
+    public void SoundSpawnStop()
+    {
+        soundSpawnControl.GetComponent<soundSpawnerController>().StopSpawnSound();
+    }
+
+    public void BeesSwarm()
+    {
+        bees.GetComponent<beeScript>().BeeSwarm();
+    }
+
+    public void UnicornNoTail()
+    {
+        unicorn.GetComponent<BlackUnicornScript>().NoTail();
     }
 
 }
