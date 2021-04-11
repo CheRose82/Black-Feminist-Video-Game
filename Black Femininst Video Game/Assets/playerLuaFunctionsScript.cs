@@ -19,7 +19,8 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("SoundSpawnStop", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStop"));
         Lua.RegisterFunction("BeesSwarm", this, typeof(playerLuaFunctionsScript).GetMethod("BeesSwarm"));
         Lua.RegisterFunction("UnicornNoTail", this, typeof(playerLuaFunctionsScript).GetMethod("UnicornNoTail"));
-
+        
+        //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
 
     void OnDisable()
@@ -47,6 +48,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject soundSpawnControl;
     public GameObject bees;
     public GameObject unicorn;
+    public GameObject mirrors;
 
 
     private void Start()
@@ -82,6 +84,10 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void UnicornNoTail()
     {
         unicorn.GetComponent<BlackUnicornScript>().NoTail();
+    }
+    public void MirrorsFlying()
+    {
+        //mirrors.GetComponent<MirrorsFlyingScript>().MirrorsFlying();
     }
 
 }
