@@ -3049,8 +3049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 645, y: 0}
+  m_SizeDelta: {x: 1018, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &280753586
 MonoBehaviour:
@@ -8846,6 +8846,7 @@ MonoBehaviour:
   soundSpawnControl: {fileID: 2042734174}
   bees: {fileID: 42626843}
   unicorn: {fileID: 1003276098}
+  AudreyLForrest: {fileID: 0}
 --- !u!1 &884350612
 GameObject:
   m_ObjectHideFlags: 0
@@ -19024,8 +19025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 645, y: 0}
+  m_SizeDelta: {x: 1018, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1761902270
 MonoBehaviour:

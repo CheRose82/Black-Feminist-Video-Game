@@ -3125,7 +3125,7 @@ MonoBehaviour:
   startConversationEntryID: -1
   exclusive: 0
   skipIfNoValidEntries: 0
-  stopConversationOnTriggerExit: 0
+  stopConversationOnTriggerExit: 1
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
   monitorConversationDistanceFrequency: 1

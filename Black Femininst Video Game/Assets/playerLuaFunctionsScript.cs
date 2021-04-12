@@ -19,6 +19,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("SoundSpawnStop", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStop"));
         Lua.RegisterFunction("BeesSwarm", this, typeof(playerLuaFunctionsScript).GetMethod("BeesSwarm"));
         Lua.RegisterFunction("UnicornNoTail", this, typeof(playerLuaFunctionsScript).GetMethod("UnicornNoTail"));
+        Lua.RegisterFunction("SomethingStupid", this, typeof(playerLuaFunctionsScript).GetMethod("SomethingStupid"));
 
     }
 
@@ -47,6 +48,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject soundSpawnControl;
     public GameObject bees;
     public GameObject unicorn;
+    public GameObject AudreyLForrest;
 
 
     private void Start()
@@ -84,5 +86,14 @@ public class playerLuaFunctionsScript : MonoBehaviour
         unicorn.GetComponent<BlackUnicornScript>().NoTail();
     }
 
+    public void SomethingStupid()
+    {
+        unicorn.GetComponent<BlackUnicornScript>().NoTail();
+    }
+
+    public void AudreyKnowledge()
+    {
+        Instantiate(AudreyLForrest, transform.position + new Vector3(0, 15, 0), Quaternion.identity);
+    }
 }
 
