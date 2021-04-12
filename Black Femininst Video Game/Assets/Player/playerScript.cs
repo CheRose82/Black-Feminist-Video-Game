@@ -14,6 +14,9 @@ public class playerScript : MonoBehaviour
     public GameObject rightNozzle;
     public GameObject leftNozAir;
     public GameObject rightNozAir;
+    public GameObject unicorn;
+    public GameObject glitterDB;
+    public GameObject heyWatchDB;
     public bool Grounded;
     public bool walking;
     //public Animator anim;
@@ -21,6 +24,7 @@ public class playerScript : MonoBehaviour
     public bool facingRight = true;
     public bool readyToShoot;
     public bool hasControl = true;
+    public bool RideUnicornAttempt;
     
     // Start is called before the first frame update
     void Start()
@@ -155,6 +159,25 @@ public class playerScript : MonoBehaviour
             Debug.Log("We touched the axe");
             //animate holding up the Axe
         }
+
+        //unicorn
+        if (other.CompareTag("BlackUnicorn"))
+        {
+            Debug.Log("he should have touched the unicorn");
+            if(RideUnicornAttempt == false)
+            {
+                //trigger ride horse animation
+                // and then trigger hiim getting kicked off
+                KickedOffUnicorn();
+                RideUnicornAttempt = true;
+            }
+            else //after above when he's abou tto get glitter bombed
+            {
+                //invoke the glitter bomb
+                Invoke("GlitterBomb", 4.0f);
+                Debug.Log("The glitter bomb happened on the player side");
+            }
+        }
     }
 
     public void OnTriggerExit(Collider other)
@@ -232,5 +255,23 @@ public class playerScript : MonoBehaviour
     public void Bones()
     {
         //play animation for turning to bones
+    }
+
+    public void KickedOffUnicorn()
+    {
+        rb.AddForce(-700, 150, 0);
+    }
+
+    public void GlitterBomb()
+    {
+        unicorn.GetComponent<BlackUnicornScript>().GBomb();
+        rb.AddForce(-200, 100, 0);
+        Invoke("HeyWatchItDB", 3.0f);
+    }
+
+    public void HeyWatchItDB()
+    {
+        heyWatchDB.active = true;
+        Debug.Log("Spawning the dialogue box worked");
     }
 }

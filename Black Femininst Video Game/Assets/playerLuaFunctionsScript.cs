@@ -19,6 +19,13 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("SoundSpawnStop", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStop"));
         Lua.RegisterFunction("BeesSwarm", this, typeof(playerLuaFunctionsScript).GetMethod("BeesSwarm"));
         Lua.RegisterFunction("UnicornNoTail", this, typeof(playerLuaFunctionsScript).GetMethod("UnicornNoTail"));
+        Lua.RegisterFunction("AudreyKnowledge", this, typeof(playerLuaFunctionsScript).GetMethod("AudreyKnowledge"));
+        Lua.RegisterFunction("RideUnicorn", this, typeof(playerLuaFunctionsScript).GetMethod("RideUnicorn"));
+        Lua.RegisterFunction("DontRideUnicorn", this, typeof(playerLuaFunctionsScript).GetMethod("DontRideUnicorn"));
+        Lua.RegisterFunction("DestroyUnicornDB", this, typeof(playerLuaFunctionsScript).GetMethod("DestroyUnicornDB"));
+        Lua.RegisterFunction("FollowHorse", this, typeof(playerLuaFunctionsScript).GetMethod("FollowHorse"));
+        Lua.RegisterFunction("UnicornEndingRun", this, typeof(playerLuaFunctionsScript).GetMethod("UnicornEndingRun"));
+
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
@@ -49,6 +56,9 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject bees;
     public GameObject unicorn;
     public GameObject mirrors;
+    public GameObject AudreyLForrest;
+    public GameObject unicornDialogueBox;
+    public GameObject unicornDialogueBox2;
 
 
     private void Start()
@@ -98,5 +108,31 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void AudreyKnowledge()
     {
         Instantiate(AudreyLForrest, transform.position + new Vector3(0, 15, 0), Quaternion.identity);
+    }
+
+    public void RideUnicorn()
+    {
+        GetComponent<playerScript>().RideUnicornAttempt = true;
+    }
+
+    public void DontRideUnicorn()
+    {
+        GetComponent<playerScript>().RideUnicornAttempt = false;
+    }
+
+    public void DestroyUnicornDB()
+    {
+        Destroy(unicornDialogueBox);
+        unicornDialogueBox2.active = true;
+    }
+
+    public void FollowHorse()
+    {
+        unicorn.GetComponent<BlackUnicornScript>().AIBehavior = 6;
+    }
+
+    public void UnicornEndingRun()
+    {
+        unicorn.GetComponent<BlackUnicornScript>().EndingRunOff();
     }
 }

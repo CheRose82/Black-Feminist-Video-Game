@@ -106,3 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2440f5a7143d4e3d81c2d10dc09db4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knowledgePart: {fileID: 7736719349913096510, guid: c7217e972cc3344069c1902b296ce109,
+    type: 3}
+  disperseExplosion: {fileID: 4608169480413612513, guid: 1fd3932c96c61460f89ae63bc83c0168,
+    type: 3}
