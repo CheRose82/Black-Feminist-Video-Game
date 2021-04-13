@@ -25,6 +25,14 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("DestroyUnicornDB", this, typeof(playerLuaFunctionsScript).GetMethod("DestroyUnicornDB"));
         Lua.RegisterFunction("FollowHorse", this, typeof(playerLuaFunctionsScript).GetMethod("FollowHorse"));
         Lua.RegisterFunction("UnicornEndingRun", this, typeof(playerLuaFunctionsScript).GetMethod("UnicornEndingRun"));
+        Lua.RegisterFunction("ToolBox", this, typeof(playerLuaFunctionsScript).GetMethod("ToolBox"));
+        Lua.RegisterFunction("ShowUmbrella", this, typeof(playerLuaFunctionsScript).GetMethod("ShowUmbrella"));
+        Lua.RegisterFunction("ShowTelescope", this, typeof(playerLuaFunctionsScript).GetMethod("ShowTelescope"));
+        Lua.RegisterFunction("ShowKey", this, typeof(playerLuaFunctionsScript).GetMethod("ShowKey"));
+        Lua.RegisterFunction("MargLeaves", this, typeof(playerLuaFunctionsScript).GetMethod("MargLeaves"));
+        Lua.RegisterFunction("MirrorsRise", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsRise"));
+        Lua.RegisterFunction("MirrorsClosing", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsClosing"));
+
 
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
@@ -59,6 +67,12 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject AudreyLForrest;
     public GameObject unicornDialogueBox;
     public GameObject unicornDialogueBox2;
+    public GameObject toolbox1;
+    public GameObject aUmbrella;
+    public GameObject aTelescope;
+    public GameObject aKey;
+    public GameObject MargLevel2;
+    public GameObject mirrorController;
 
 
     private void Start()
@@ -134,5 +148,38 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void UnicornEndingRun()
     {
         unicorn.GetComponent<BlackUnicornScript>().EndingRunOff();
+    }
+
+    public void ToolBox()
+    {
+        toolbox1.GetComponent<ToolBoxScript>().ActivateToolBox();
+    }
+
+    public void ShowUmbrella()
+    {
+        aUmbrella.GetComponent<umbTeleKeyScript>().ActivateItem();
+    }
+    public void ShowTelescope()
+    {
+        aTelescope.GetComponent<umbScript>().ActivateItem2();
+    }
+    public void ShowKey()
+    {
+        aKey.GetComponent<kyScript>().ActivateItem3();
+    }
+
+    public void MargLeaves()
+    {
+        MargLevel2.GetComponent<MargLevel2>().DestroyMargL2();
+    }
+
+    public void MirrorsRise()
+    {
+        mirrorController.GetComponent<MirrorControllerScript>().RaiseMirrors();
+    }
+
+    public void MirrorsClosing()
+    {
+        mirrorController.GetComponent<MirrorControllerScript>().CloseMirrors();
     }
 }

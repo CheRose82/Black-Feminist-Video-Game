@@ -20,6 +20,7 @@ public class CameraPosition : MonoBehaviour
     //2 - follows player right, up, down
     //3 - camera clicks to new location
     //4 - slowly zooms to specific object
+    //5 = Camera stops where it is
 
     void Start()
     {

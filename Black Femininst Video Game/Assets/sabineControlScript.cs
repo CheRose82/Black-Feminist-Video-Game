@@ -47,6 +47,12 @@ public class sabineControlScript : MonoBehaviour
         {
             grounded = true;
         }
+
+        //for level when she searches the toolbox
+        if (other.CompareTag("ToolBoxSab"))
+        {
+            //start lookinh in box animation
+        }
     }
 
     public void OnTriggerExit(Collider other)
