@@ -102,6 +102,27 @@ public class CameraPosition : MonoBehaviour
             //write a function that uses Vector.MoveTowards to slowly move the camera in or out for close up and pan outs.
 
         }
+
+        if (Cam_Behavior == 6)
+        {
+
+            if (playerObj.GetComponent<playerScript>().facingRight == true)
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+            }
+            else
+            {
+                Vector3 playerPosition = player.position + offset;
+                Vector3 newPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
+            }
+
+
+            //Vector3 smoothPosition = Vector3.Lerp(transform.position, playerPosition, smoothFactor * Time.fixedDeltaTime);
+            //transform.position = smoothPosition;
+        }
     }
 
     //Vector3 calculatePlayerBox()

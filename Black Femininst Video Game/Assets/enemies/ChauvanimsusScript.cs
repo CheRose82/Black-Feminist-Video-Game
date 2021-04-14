@@ -59,6 +59,10 @@ public class ChauvanimsusScript : MonoBehaviour
     private bool waitingToDuck;
     private float duckTimer;
 
+    //grab Jonas Core position
+    public Vector3 jonasCentralPos;
+    public Vector3 chauvCentralPos;
+
     //Actions:
     // 1 Walk back an forth
     // 2 deciding
@@ -402,7 +406,23 @@ public class ChauvanimsusScript : MonoBehaviour
             }
         }
 
+        if(AI_Behavior == 9)//mirror jonas
+        {
+            float yPos = chauvCentralPos.y + (player.transform.position.y - jonasCentralPos.y);
+            float xPos = chauvCentralPos.x - (player.transform.position.x - jonasCentralPos.x);
+            transform.position = new Vector3(xPos, yPos, 0);
+        }
 
+        if (Input.GetKeyDown(KeyCode.Alpha9))//should be reg 9
+        {
+            //first grab Jonas Position. Make sure he is in the center of the left first
+            jonasCentralPos = player.transform.position;
+            chauvCentralPos = new Vector3(163f, 7.5f, 0f);
+            transform.position = new Vector3(163f, 7.5f, 0f);
+
+            AI_Behavior = 9;
+            Debug.Log("chauv should be at ai9");
+        }
     }
 
     //public void OnTriggerEnter(Collider other)

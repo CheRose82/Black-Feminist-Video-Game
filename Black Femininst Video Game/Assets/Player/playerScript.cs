@@ -17,6 +17,9 @@ public class playerScript : MonoBehaviour
     public GameObject unicorn;
     public GameObject glitterDB;
     public GameObject heyWatchDB;
+    public GameObject crackMirror;
+    public GameObject breakFreeMirror;
+    public GameObject DBp50;
     public bool Grounded;
     public bool walking;
     //public Animator anim;
@@ -25,6 +28,7 @@ public class playerScript : MonoBehaviour
     public bool readyToShoot;
     public bool hasControl = true;
     public bool RideUnicornAttempt;
+    private Vector3 returnPos;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +38,7 @@ public class playerScript : MonoBehaviour
         //nicole = GameObject.Find("Nicole");
         facingRight = true;readyToShoot = true;
         hasControl = true;
+        breakFreeMirror = GameObject.Find("Mirror Break Free");
     }
 
     // Update is called once per frame
@@ -273,5 +278,58 @@ public class playerScript : MonoBehaviour
     {
         heyWatchDB.active = true;
         Debug.Log("Spawning the dialogue box worked");
+    }
+
+    public void Dance()
+    {
+        //fire the animation for dancing
+        Debug.Log("Jonas is dancing");
+        Invoke(nameof(StopDancing), 4f);
+
+        //next you have to create a reference to the Nicole Mirros animation and start her dancing
+    }
+
+    public void StopDancing()
+    {
+        //avatar nicole stops dancing 
+        //and then one of the mirrors shatters
+        //Jonas Stops dancing
+        Invoke(nameof(JonasStopDancing), 3);
+        Debug.Log("Everyone stops dancing. The other mirror is about to crack");
+    }
+
+    public void JonasStopDancing()
+    {
+        //jonas stops dancing
+        Invoke(nameof(MirrorBreaks), 1);
+    }
+
+    public void MirrorBreaks()
+    {
+        crackMirror.GetComponent<MirrorBreaks>().CrackMirror();
+    }
+
+    public void BreakFreeMirror()
+    {
+        returnPos = transform.position;
+        transform.position = breakFreeMirror.transform.position + new Vector3(1, 0, 0);
+        rb.useGravity = false;
+        //start the swing hammer animation
+
+        Invoke(nameof(BreakFreeMirror2), 3.0f);
+        
+    }
+
+    public void BreakFreeMirror2()
+    {
+        breakFreeMirror.GetComponent<MirrorBreakSabFree>().CrackMirror();
+        transform.position = returnPos;
+        rb.useGravity = true;
+        //add the animation for the umbrella here
+
+        //now instantiate an object to start the next script
+        Instantiate(DBp50, transform.position + new Vector3(0, -100, 0), Quaternion.identity);
+        Debug.Log("He instantiated the dialgue box");
+
     }
 }

@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 3348741383788996932}
   - component: {fileID: 3348741383788996929}
   - component: {fileID: 3348741383788996931}
+  - component: {fileID: 953496559}
+  - component: {fileID: 953496567}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,10 +153,18 @@ MonoBehaviour:
   rightNozzle: {fileID: 1780530131}
   leftNozAir: {fileID: 7384302761892342275}
   rightNozAir: {fileID: 3288858963100583123}
+  unicorn: {fileID: 0}
+  glitterDB: {fileID: 0}
+  heyWatchDB: {fileID: 0}
+  crackMirror: {fileID: 0}
+  breakFreeMirror: {fileID: 0}
+  DBp50: {fileID: 879285155437882476, guid: 5e6961eba0f4e41d292e74ee5f0e282a, type: 3}
   Grounded: 0
   walking: 0
   facingRight: 1
   readyToShoot: 0
+  hasControl: 1
+  RideUnicornAttempt: 0
 --- !u!33 &3348741383788996959
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -260,6 +270,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   TakingDamage: 1
+  recoil: 0
+--- !u!114 &953496559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348741383788996956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c270a07814b407895ed74484e6d901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+--- !u!114 &953496567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348741383788996956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4606f479d69d464b95889a67307dab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unregisterOnDisable: 0
+  soundCloudControl: {fileID: 0}
+  soundSpawnControl: {fileID: 0}
+  bees: {fileID: 0}
+  unicorn: {fileID: 0}
+  mirrors: {fileID: 0}
+  AudreyLForrest: {fileID: 0}
+  unicornDialogueBox: {fileID: 0}
+  unicornDialogueBox2: {fileID: 0}
+  toolbox1: {fileID: 0}
+  aUmbrella: {fileID: 0}
+  aTelescope: {fileID: 0}
+  aKey: {fileID: 0}
+  MargLevel2: {fileID: 0}
+  mirrorController: {fileID: 0}
+  player: {fileID: 3348741383788996956}
+  sabine: {fileID: 0}
+  MargHammer: {fileID: 0}
+  hammer: {fileID: 0}
 --- !u!1 &7384302761892342275
 GameObject:
   m_ObjectHideFlags: 0

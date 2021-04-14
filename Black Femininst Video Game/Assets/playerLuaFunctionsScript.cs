@@ -32,8 +32,12 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("MargLeaves", this, typeof(playerLuaFunctionsScript).GetMethod("MargLeaves"));
         Lua.RegisterFunction("MirrorsRise", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsRise"));
         Lua.RegisterFunction("MirrorsClosing", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsClosing"));
-
-
+        Lua.RegisterFunction("MirrorsEverywhere", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsEverywhere"));
+        Lua.RegisterFunction("StartDancing", this, typeof(playerLuaFunctionsScript).GetMethod("StartDancing"));
+        Lua.RegisterFunction("SabineUmbrella", this, typeof(playerLuaFunctionsScript).GetMethod("SabineUmbrella"));
+        Lua.RegisterFunction("SabineBreakFree", this, typeof(playerLuaFunctionsScript).GetMethod("SabineBreakFree"));
+        Lua.RegisterFunction("MargGiveHammer", this, typeof(playerLuaFunctionsScript).GetMethod("MargGiveHammer"));
+        Lua.RegisterFunction("BreakCeiling", this, typeof(playerLuaFunctionsScript).GetMethod("BreakCeiling"));
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
@@ -73,11 +77,17 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject aKey;
     public GameObject MargLevel2;
     public GameObject mirrorController;
+    public GameObject player;
+    public GameObject sabine;
+    public GameObject MargHammer;
+    public GameObject hammer;
 
 
     private void Start()
     {
+        //player = GameObject.Find("Player");
         //Debug.Break();
+        
     }
 
     public void SoundCloudStart()
@@ -181,5 +191,37 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void MirrorsClosing()
     {
         mirrorController.GetComponent<MirrorControllerScript>().CloseMirrors();
+    }
+
+    public void MirrorsEverywhere()
+    {
+        mirrorController.GetComponent<MirrorControllerScript>().UnBlackoutMirrors();
+    }
+
+    public void StartDancing()
+    {
+        GetComponent<playerScript>().Dance();
+        Debug.Log("the Lua script should have sent it to the player script");
+    }
+
+    public void SabineUmbrella()
+    {
+        sabine.GetComponent<SabineLevel2>().HereUmbrella();
+    }
+
+    public void SabineBreakFree()
+    {
+        player.GetComponent<playerScript>().BreakFreeMirror();
+    }
+
+    public void MargGiveHammer()
+    {
+        MargHammer.GetComponent<MargLevel2Ending>().Hammer();
+    }
+
+    public void BreakCeiling()
+    {
+        hammer = GameObject.Find("hammer(Clone)");
+        hammer.GetComponent<hammerScript>().BreakCeiling();
     }
 }

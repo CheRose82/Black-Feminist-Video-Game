@@ -7,6 +7,7 @@ public class MirrorScript : MonoBehaviour
     public Vector3 thisPos;
     public float riseSpeed;
     public int behavior;
+    public GameObject sparkle;
 
     //behaviors
     //0 nothing
@@ -41,5 +42,15 @@ public class MirrorScript : MonoBehaviour
     public void RandomRise()
     {
         Invoke(nameof(BeginRising), Random.Range(0f, 0.5f));
+    }
+
+    public void StartDestroy()
+    {
+        Invoke(nameof(SparkleDestroy), Random.Range(0f, .1f));
+    }
+    public void SparkleDestroy()
+    {
+        Instantiate(sparkle, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }
