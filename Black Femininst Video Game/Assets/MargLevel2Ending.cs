@@ -6,11 +6,13 @@ public class MargLevel2Ending : MonoBehaviour
 {
     public GameObject DBp52;
     public GameObject hammer;
+    public GameObject poof;
     // Start is called before the first frame update
     void Start()
     {
         Invoke(nameof(MargAppear), 3);
         Invoke(nameof(StartDialogue), 4);
+        
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class MargLevel2Ending : MonoBehaviour
     public void MargAppear()
     {
         GetComponent<MeshRenderer>().enabled = true;
+        POOF();
     }
 
     public void StartDialogue()
@@ -32,5 +35,11 @@ public class MargLevel2Ending : MonoBehaviour
     public void Hammer()
     {
         Instantiate(hammer, transform.position + new Vector3(0, 50, 0), Quaternion.identity);
+    }
+
+    public void POOF()
+    {
+        Instantiate(poof, transform.position, Quaternion.identity);
+        //play sound
     }
 }

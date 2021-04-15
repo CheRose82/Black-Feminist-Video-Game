@@ -29,10 +29,15 @@ public class playerScript : MonoBehaviour
     public bool hasControl = true;
     public bool RideUnicornAttempt;
     private Vector3 returnPos;
+
+    //sfx
+    public AudioClip jumpClip;
+    public AudioSource playerSource;
     
     // Start is called before the first frame update
     void Start()
     {
+        playerSource = GetComponent<AudioSource>();
         runSpeed = 0.05f;
         rb = GetComponent<Rigidbody>();
         //nicole = GameObject.Find("Nicole");
@@ -98,6 +103,7 @@ public class playerScript : MonoBehaviour
                 {
                     //anim.SetTrigger("JumpingTrigger");
                     rb.velocity = Vector3.up * 7.5f;
+                    playerSource.PlayOneShot(jumpClip, 7);
                 }
             }
             

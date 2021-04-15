@@ -76,7 +76,7 @@ public class ChauvanimsusScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AI_Behavior = 1;
+        //AI_Behavior = 1;
         walkTimer = 5.0f;
         walkTimerReset = 5f;
         //walkSpeed = 0.1f;

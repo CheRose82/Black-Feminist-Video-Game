@@ -149,7 +149,7 @@ BoxCollider:
   m_GameObject: {fileID: 39098743}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -160,7 +160,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39098743}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -221,6 +221,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 953496567, guid: 55dfd302ddca446f58eadad72bb1fcaf, type: 3}
+      propertyPath: hammer
+      value: 
+      objectReference: {fileID: 6553199863535287641, guid: a7f54905440344833b43745672f5b110,
+        type: 3}
     - target: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -229,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.61
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
@@ -429,6 +434,7 @@ MonoBehaviour:
   sabine: {fileID: 1538902591}
   MargHammer: {fileID: 1646460497}
   hammer: {fileID: 0}
+  bigDoor: {fileID: 0}
 --- !u!114 &942652925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camera Switch Plane (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679022560029227146, guid: 819d940bae96c4858b3392dc55339346,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1679022560029227147, guid: 819d940bae96c4858b3392dc55339346,
         type: 3}
@@ -877,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538902591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 299.14, y: 2.65, z: 0}
+  m_LocalPosition: {x: 299.14, y: 2.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 599738905}
@@ -968,7 +979,7 @@ MonoBehaviour:
   Speed: 0
   dampTime: 0.6
   velocity: {x: 0, y: 0, z: 0}
-  Cam_Behavior: 6
+  Cam_Behavior: 3
 --- !u!81 &1603179270
 AudioListener:
   m_ObjectHideFlags: 0
@@ -985,7 +996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603179267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300.78, y: 6.48, z: -10.5}
+  m_LocalPosition: {x: 300.78, y: 7.53, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1099,6 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DBp52: {fileID: 295614329307504277, guid: ea062609f51df4ef3ad16f68797a23c3, type: 3}
   hammer: {fileID: 6553199863535287641, guid: a7f54905440344833b43745672f5b110, type: 3}
+  poof: {fileID: 8207911536054843594, guid: f4b7bb7155007462db82bd11ef7365aa, type: 3}
 --- !u!1001 &1911310272
 PrefabInstance:
   m_ObjectHideFlags: 0

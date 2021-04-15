@@ -5913,12 +5913,12 @@ PrefabInstance:
     - target: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 304.75
+      value: 193.3
       objectReference: {fileID: 0}
     - target: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.61
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 3348741383788996928, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
@@ -6852,6 +6852,7 @@ MonoBehaviour:
   sabine: {fileID: 0}
   MargHammer: {fileID: 0}
   hammer: {fileID: 0}
+  bigDoor: {fileID: 0}
 --- !u!114 &1119671658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10257,7 +10258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727520779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 304.26, y: 5.4, z: -10.5}
+  m_LocalPosition: {x: 195.1, y: 5.4, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12802,12 +12803,12 @@ PrefabInstance:
     - target: {fileID: 8951954362643547100, guid: e73bfab59dc2f437b8b3aa92ea07652d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 291.19
+      value: 190.4
       objectReference: {fileID: 0}
     - target: {fileID: 8951954362643547100, guid: e73bfab59dc2f437b8b3aa92ea07652d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.65
+      value: 3.64
       objectReference: {fileID: 0}
     - target: {fileID: 8951954362643547100, guid: e73bfab59dc2f437b8b3aa92ea07652d,
         type: 3}

@@ -38,6 +38,9 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("SabineBreakFree", this, typeof(playerLuaFunctionsScript).GetMethod("SabineBreakFree"));
         Lua.RegisterFunction("MargGiveHammer", this, typeof(playerLuaFunctionsScript).GetMethod("MargGiveHammer"));
         Lua.RegisterFunction("BreakCeiling", this, typeof(playerLuaFunctionsScript).GetMethod("BreakCeiling"));
+        Lua.RegisterFunction("DoorVanish", this, typeof(playerLuaFunctionsScript).GetMethod("DoorVanish"));
+        Lua.RegisterFunction("DoorVanish", this, typeof(playerLuaFunctionsScript).GetMethod("DoorVanish"));
+        Lua.RegisterFunction("HereKey", this, typeof(playerLuaFunctionsScript).GetMethod("HereKey"));
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
@@ -81,6 +84,8 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject sabine;
     public GameObject MargHammer;
     public GameObject hammer;
+    public GameObject bigDoor;
+
 
 
     private void Start()
@@ -223,5 +228,16 @@ public class playerLuaFunctionsScript : MonoBehaviour
     {
         hammer = GameObject.Find("hammer(Clone)");
         hammer.GetComponent<hammerScript>().BreakCeiling();
+    }
+
+    public void DoorVanish()
+    {
+        bigDoor.GetComponent<bossDoorScript>().DoorVanish();
+    }
+
+    public void HereKey()
+    {
+        sabine.GetComponent<SabineLevel4>().ThrowKey();
+        Debug.Log("The key should be thrown");
     }
 }
