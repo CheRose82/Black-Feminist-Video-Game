@@ -235,7 +235,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
         bigDoor.GetComponent<bossDoorScript>().DoorVanish();
     }
 
-    public void HereKey()
+    public void HereKey() 
     {
         sabine.GetComponent<SabineLevel4>().ThrowKey();
         Debug.Log("The key should be thrown");
