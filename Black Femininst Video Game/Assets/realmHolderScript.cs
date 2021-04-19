@@ -8,6 +8,7 @@ public class realmHolderScript : MonoBehaviour
     public GameObject forest;
     public GameObject ForestPos;
     public GameObject StagePos;
+    public GameObject CavePos;
     public GameObject sabinePos;
     public GameObject jonasPos;
     public GameObject jonas;
@@ -15,7 +16,10 @@ public class realmHolderScript : MonoBehaviour
 
 
     public bool moving;
-    public bool movingLeft;
+    public int movingTo;
+    //1 Forest
+    //2 Stage
+    //3 Cave
 
     public GameObject levelStarter;
     public GameObject WhatsHappDBp26;
@@ -54,6 +58,13 @@ public class realmHolderScript : MonoBehaviour
 
     public GameObject bombKaren;
 
+    public GameObject sabinePos2;
+    public GameObject jonasPos2;
+    public bool movingToCave;
+
+    public GameObject telescope;
+    public bool TelescopeMoving;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +86,9 @@ public class realmHolderScript : MonoBehaviour
         rightCurtain = GameObject.Find("Right Curtain");
         LCurtainDest = GameObject.Find("LCurtainDest");
         RCurtainDest = GameObject.Find("RCurtainDest");
+        CavePos = GameObject.Find("Cave Pos");
+        sabinePos2 = GameObject.Find("SabineJumpToPos2");
+        jonasPos2 = GameObject.Find("JonasJumpToPos2");
         
 
         spotlights.SetActive(false);
@@ -88,26 +102,32 @@ public class realmHolderScript : MonoBehaviour
 
         movingIPTimer = 1.5f;
         beamRotateSpeed = .05f;
+        movingToCave = false;
     }
 
     private void Update()
     {
         if (moving)
         {
-            if (!movingLeft)
+            if (movingTo == 2)
             {
                 transform.position = Vector3.MoveTowards(transform.position, StagePos.transform.position, 100 * Time.deltaTime);
                 
             }
-        }
-
-        if (moving)
-        {
-            if (movingLeft)
+            if (movingTo == 1)
             {
                 transform.position = Vector3.MoveTowards(transform.position, ForestPos.transform.position, 100 * Time.deltaTime);
             }
+            //to the cave
+            if (movingTo == 3)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, CavePos.transform.position, 100 * Time.deltaTime);
+            }
         }
+
+        
+            
+        
 
         if(movingIntoPlace == true)
         {
@@ -179,6 +199,21 @@ public class realmHolderScript : MonoBehaviour
             jonas.transform.Translate(-.01f, 0, 0);
             sabine.transform.Translate(.01f, 0, 0);
         }
+
+        if(movingToCave == true)
+        {
+            jonas.transform.position = Vector3.MoveTowards(jonas.transform.position, jonasPos2.transform.position, 15 * Time.deltaTime);
+            sabine.transform.position = Vector3.MoveTowards(sabine.transform.position, sabinePos2.transform.position, 15 * Time.deltaTime);
+        }
+
+        if (TelescopeMoving)
+        {
+            telescope.transform.position = Vector3.MoveTowards(telescope.transform.position, jonas.transform.position, 3 * Time.deltaTime);
+            if (Vector3.Distance(telescope.transform.position, jonas.transform.position) < .2f)
+            {
+                Destroy(telescope);
+            }
+        }
         
 
         
@@ -205,13 +240,25 @@ public class realmHolderScript : MonoBehaviour
     public void MoveToStage()
     {
         moving = true;
-        movingLeft = false;
+        movingTo = 2;
     }
 
     public void MoveToForest()
     {
         moving = true;
-        movingLeft = true;
+        movingTo = 1;
+    }
+
+    public void MoveToCave()
+    {
+        moving = true;
+        movingTo = 3;
+        movingToCave = true;
+    }
+
+    public void ToCaveStop()
+    {
+        movingToCave = false;
     }
 
     public void GoToStage()
@@ -275,6 +322,8 @@ public class realmHolderScript : MonoBehaviour
         Invoke(nameof(SpawnKarens), 8f);
         Invoke(nameof(ExpandStage), 13);
         Invoke(nameof(DropBombKaren), 18);
+        Invoke(nameof(MoveToCave), 25);
+        Invoke(nameof(ToCaveStop), 27);
 
         //didn't need to do that
         Instantiate(db54, transform.position + new Vector3(0, 100, 0), Quaternion.identity);
@@ -307,6 +356,13 @@ public class realmHolderScript : MonoBehaviour
     public void DropBombKaren()
     {
         Instantiate(bombKaren, KarenSpawner.transform.position + new Vector3(0, 20, 0), Quaternion.identity);
+    }
+
+    public void SabineGiveTelescope()
+    {
+        Instantiate(telescope, sabine.transform.position, Quaternion.identity);
+        TelescopeMoving = true;
+        
     }
 
 

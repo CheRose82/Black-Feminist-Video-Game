@@ -41,6 +41,8 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("DoorVanish", this, typeof(playerLuaFunctionsScript).GetMethod("DoorVanish"));
         Lua.RegisterFunction("DoorVanish", this, typeof(playerLuaFunctionsScript).GetMethod("DoorVanish"));
         Lua.RegisterFunction("HereKey", this, typeof(playerLuaFunctionsScript).GetMethod("HereKey"));
+        Lua.RegisterFunction("GiveTelescope", this, typeof(playerLuaFunctionsScript).GetMethod("GiveTelescope"));
+        Lua.RegisterFunction("GameOverMargAppears", this, typeof(playerLuaFunctionsScript).GetMethod("GameOverMargAppears"));
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
@@ -85,6 +87,8 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject MargHammer;
     public GameObject hammer;
     public GameObject bigDoor;
+    public GameObject realmHolder;
+    public GameObject MargLevel4;
 
 
 
@@ -92,7 +96,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
     {
         //player = GameObject.Find("Player");
         //Debug.Break();
-        
+
     }
 
     public void SoundCloudStart()
@@ -235,9 +239,19 @@ public class playerLuaFunctionsScript : MonoBehaviour
         bigDoor.GetComponent<bossDoorScript>().DoorVanish();
     }
 
-    public void HereKey() 
+    public void HereKey()
     {
         sabine.GetComponent<SabineLevel4>().ThrowKey();
         Debug.Log("The key should be thrown");
+    }
+
+    public void GiveTelescope()
+    {
+        realmHolder.GetComponent<realmHolderScript>().SabineGiveTelescope();
+    }
+
+    public void GameOverMargAppears()
+    {
+        Instantiate(MargLevel4, new Vector3(156.06f, 10.8f, 0), Quaternion.identity);
     }
 }

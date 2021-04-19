@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +17,8 @@ public class ChauvanimsusScript : MonoBehaviour
     public GameObject topFlightRespawn;
     public GameObject impactParticles;
     public GameObject enemyAdds;
+
+    public GameObject DBp60JonasAreYouAlright;
     //Rigidbody rb;
     public int AI_Behavior;
     public int health;
@@ -422,6 +424,14 @@ public class ChauvanimsusScript : MonoBehaviour
 
             AI_Behavior = 9;
             Debug.Log("chauv should be at ai9");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            Instantiate(DBp60JonasAreYouAlright, transform.position, Quaternion.identity);
+            GetComponent<Renderer>().enabled = false;
+            Destroy(this.gameObject);
+            
         }
     }
 

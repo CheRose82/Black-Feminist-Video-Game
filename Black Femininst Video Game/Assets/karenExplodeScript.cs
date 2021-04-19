@@ -39,5 +39,7 @@ public class karenExplodeScript : MonoBehaviour
     public void StopRecoiling()
     {
         recoiling = false;
+        Instantiate(db55Nooo, transform.position, Quaternion.identity);
+        Debug.Log("She hit the ground");
     }
 }
