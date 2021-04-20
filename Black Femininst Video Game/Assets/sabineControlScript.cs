@@ -7,6 +7,9 @@ public class sabineControlScript : MonoBehaviour
     Rigidbody rb;
     public float runSpeed;
     public bool grounded;
+    public GameObject SabineAnim;
+    public Animator anim;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +25,34 @@ public class sabineControlScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(-runSpeed, 0, 0);
+            //anim.SetBool("isRunning", true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            anim.SetBool("isRunning", true);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            anim.SetBool("isRunning", false);
         }
 
         //walk right
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(runSpeed, 0, 0);
+            anim.SetBool("isRunning", true);
         }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            anim.SetBool("isRunning", true);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            anim.SetBool("isRunning", false);
+        }
+
 
         //jump
         if (grounded)
@@ -36,7 +60,10 @@ public class sabineControlScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 rb.velocity = Vector3.up * 7.5f;
+                anim.SetTrigger("jumpTrigger");
             }
+
+           
         }
 
     }
@@ -46,6 +73,7 @@ public class sabineControlScript : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             grounded = true;
+            anim.SetBool("isOnGround", true);
         }
 
         //for level when she searches the toolbox
@@ -60,6 +88,7 @@ public class sabineControlScript : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             grounded = false;
+            anim.SetBool("isOnGround", false);
         }
     }
 }
