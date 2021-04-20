@@ -27,7 +27,11 @@ public class BlackUnicornScript : MonoBehaviour
         //if on level 2, invoke the functions to runoff screen
         Invoke(nameof(SayGoodbye), 2f);
         Invoke(nameof(Level2RunOff), 3.5f);
-        Invoke(nameof(DestroyUnicorn), 10f);
+        if(level ==2)
+        {
+            Invoke(nameof(DestroyUnicorn), 10f);
+        }
+        
     }
 
     // Update is called once per frame

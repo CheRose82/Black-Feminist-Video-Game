@@ -40,6 +40,6 @@ public class karenExplodeScript : MonoBehaviour
     {
         recoiling = false;
         Instantiate(db55Nooo, transform.position, Quaternion.identity);
-        Debug.Log("She hit the ground");
+//        Debug.Log("She hit the ground");
     }
 }

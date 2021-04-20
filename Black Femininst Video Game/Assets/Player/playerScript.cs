@@ -185,7 +185,7 @@ public class playerScript : MonoBehaviour
             else //after above when he's abou tto get glitter bombed
             {
                 //invoke the glitter bomb
-                Invoke("GlitterBomb", 4.0f);
+                Invoke("GlitterBomb", 1.0f);
                 Debug.Log("The glitter bomb happened on the player side");
             }
         }
@@ -277,7 +277,7 @@ public class playerScript : MonoBehaviour
     {
         unicorn.GetComponent<BlackUnicornScript>().GBomb();
         rb.AddForce(-200, 100, 0);
-        Invoke("HeyWatchItDB", 3.0f);
+        Invoke("HeyWatchItDB", 0.5f);
     }
 
     public void HeyWatchItDB()
