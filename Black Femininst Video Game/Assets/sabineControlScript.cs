@@ -31,6 +31,7 @@ public class sabineControlScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             anim.SetBool("isRunning", true);
+            SabineAnim.transform.localEulerAngles = new Vector3(0, 180, 0);
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
@@ -47,6 +48,7 @@ public class sabineControlScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             anim.SetBool("isRunning", true);
+            SabineAnim.transform.localEulerAngles = new Vector3(0, 0, 0);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
