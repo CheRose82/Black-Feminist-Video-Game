@@ -29894,7 +29894,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: I think it. It's voices.
+        value: I think it. \.It's voices.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -30036,7 +30036,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Listen, it's people. Women. Women's voices.
+        value: Listen, it's people. \.Women. \.Women's voices.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -30251,7 +30251,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Well, it has to be a sound that she knew you'd recognize. What's the
-          name of that icon you are obsessed with?
+          name of that icon you are obsessed with?\.\.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -30466,7 +30466,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: Audre Lorde. Audre Lorde. Audre Lorde. Damn it. I know NOTHING about
-          that woman.
+          that woman.\.\.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -30895,8 +30895,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'It is not on her lap where the horn rests, but deep in her moonpit
-          growing. '
+        value: It is not on her lap where the horn rests, but deep in her moonpit
+          growing. \.\.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -30967,7 +30967,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: The black unicorn is restless, the black unicorn is unrelenting
+        value: The black unicorn is restless, \.the black unicorn is unrelenting
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -31077,7 +31077,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5193625
+    canvasZoom: 0.8748862
   - id: 22
     fields:
     - title: Title
@@ -32892,8 +32892,8 @@ MonoBehaviour:
         y: 704.15656
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 91.042725}
+    canvasZoom: 0.9383658
   - id: 26
     fields:
     - title: Title
@@ -35733,8 +35733,8 @@ MonoBehaviour:
         y: 791.70276
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.78778774
+    canvasScrollPosition: {x: 0, y: 129.21487}
+    canvasZoom: 0.7429489
   - id: 31
     fields:
     - title: Title
@@ -37278,7 +37278,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: Look at the prizes in context, Jonas. They are from a "toolbox" and
-          they are represented as "prizes"
+          they are represented as "prizes"\.
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -37531,8 +37531,8 @@ MonoBehaviour:
         y: 188.34193
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 22.189789}
-    canvasZoom: 0.7661187
+    canvasScrollPosition: {x: 0, y: 3.6920552}
+    canvasZoom: 0.721831
   - id: 33
     fields:
     - title: Title
@@ -39914,7 +39914,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.18680176
+    canvasZoom: 0.59053206
   - id: 37
     fields:
     - title: Title
@@ -42419,8 +42419,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "FYI, Jonas, Black women\u2019s bodies are not given the same innocence
-          that white women\u2019s bodies are given."
+        value: "FYI, Jonas, \\.Black women\u2019s bodies are not given the same innocence
+          that white women\u2019s bodies are given.\\.\\."
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -42461,7 +42461,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 30
-        y: 70
+        y: 68.89516
         width: 160
         height: 30
     - id: 2
@@ -42492,7 +42492,7 @@ MonoBehaviour:
         typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: "Society doesn\u2019t even recognize our agency over our own minds.
-          This is known as the adultification of Black girls (and Black boys)."
+          \\.This is known as the adultification of Black girls (and Black boys).\\."
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -42563,8 +42563,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: One way to be an ally is to take us at our word and believe us not
-          reinterpret us when we speak.
+        value: One way to be an ally\. is to take us at our word\. and believe us
+          \.not reinterpret us when we speak.
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -42635,7 +42635,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Let\u2019s keep going. What\u2019s next?"
+        value: "Let\u2019s keep going. What\u2019s next?\\."
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -42779,7 +42779,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: '(reading) To be used for smashing the
 
-          patriarchy, single-use
+          patriarchy, \.single-use
           item.'
         type: 0
         typeString: CustomFieldType_Text
@@ -43856,7 +43856,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 'Beware: Only by facing the chains can you break the shackles. But
+        value: 'Beware: Only by facing the chains can you break the shackles. \.But
           self-liberation may cause excessive bleeding, the loss of limbs, and disfigurement.'
         type: 0
         typeString: CustomFieldType_Text
@@ -46662,8 +46662,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "It\u2019s nice and warm over here. I think you\u2019re supposed to
-          come to me."
+        value: "It\u2019s nice and warm over here. \\.I think you\u2019re supposed
+          to come to me."
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -47131,7 +47131,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 133
-        y: 673
+        y: 673.99817
         width: 160
         height: 30
     - id: 16
@@ -47414,8 +47414,8 @@ MonoBehaviour:
         y: 873
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.82422364
+    canvasScrollPosition: {x: 0, y: 541.99554}
+    canvasZoom: 0.91048765
   - id: 60
     fields:
     - title: Title
@@ -49492,8 +49492,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: Hair is important to you black women. And Lorde is a black feminist
-          icon.\.\.\.
+        value: Hair is important to you black women. \.And Lorde is a black feminist
+          icon.\.
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -50034,8 +50034,8 @@ MonoBehaviour:
         y: 242
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 5.4571886}
-    canvasZoom: 0.9980558
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.91063577
   - id: 69
     fields:
     - title: Title
