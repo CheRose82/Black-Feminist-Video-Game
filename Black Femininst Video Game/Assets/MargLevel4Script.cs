@@ -5,6 +5,7 @@ using UnityEngine;
 public class MargLevel4Script : MonoBehaviour
 {
     public GameObject dbFinal;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {

@@ -9,6 +9,7 @@ public class BlackUnicornScript : MonoBehaviour
     //3 Running with tail
     //4 Glitter Bomb
     //5 Kick
+    public Animator anim;
     public int level;
     public GameObject player;
     public GameObject sabine;
