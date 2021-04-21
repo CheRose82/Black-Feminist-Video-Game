@@ -6,8 +6,10 @@ public class playerScript : MonoBehaviour
 {
 
     public float runSpeed;
+    public GameObject jonasAnim;
     //public GameObject sprite;
     //public GameObject nicole;
+    public Animator anim;
     public GameObject groundProj;
     public GameObject airProj;
     public GameObject leftNozzle;
@@ -64,6 +66,23 @@ public class playerScript : MonoBehaviour
 
         }
 
+        //animation stuff
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            anim.SetBool("isRunning", true);
+            jonasAnim.transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            anim.SetBool("isRunning", true);
+            jonasAnim.transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            anim.SetBool("isRunning", false);
+        }
+
+
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -104,6 +123,8 @@ public class playerScript : MonoBehaviour
                     //anim.SetTrigger("JumpingTrigger");
                     rb.velocity = Vector3.up * 7.5f;
                     playerSource.PlayOneShot(jumpClip, 7);
+                    anim.SetTrigger("jumpTrigger");
+                    
                 }
             }
             
@@ -115,23 +136,23 @@ public class playerScript : MonoBehaviour
         }
 
 
-        //if statements for the horizontal flip
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            //sprite.transform.localScale = new Vector3(1, 1, 1);
-        }
+        ////if statements for the horizontal flip
+        //if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    //sprite.transform.localScale = new Vector3(1, 1, 1);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            //sprite.transform.localScale = new Vector3(-1, 1, 1);
-        }
+        //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    //sprite.transform.localScale = new Vector3(-1, 1, 1);
+        //}
     }
     public void OnTriggerEnter(Collider other)
     {
         ///TERRAIN (mostly ground)
         if (other.CompareTag("Ground"))
         {
-            //anim.SetBool("onGround", true);
+            anim.SetBool("isOnGround", true);
             Grounded = true;
             rb.velocity = Vector3.zero;
         }
@@ -195,7 +216,7 @@ public class playerScript : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-            //anim.SetBool("onGround", false);
+            anim.SetBool("isOnGround", false);
             Grounded = false;
         }
     }
