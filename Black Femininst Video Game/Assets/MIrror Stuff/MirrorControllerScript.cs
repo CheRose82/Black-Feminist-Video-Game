@@ -16,7 +16,11 @@ public class MirrorControllerScript : MonoBehaviour
     public GameObject centralAnim;
     public GameObject centralPlane;
 
+    public GameObject exitDoor;
+    public GameObject part;
+
     public Animator anim;
+    public float destroyTime;
     
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,12 @@ public class MirrorControllerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             HandNicole();
+        }
+
+        //end level
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            DestroyCentral();
         }
     }
 
@@ -134,6 +144,7 @@ public class MirrorControllerScript : MonoBehaviour
         //destroy all the background mirrors
         foreach (GameObject m in mirrors)
         {
+            
             m.GetComponent<MirrorScript>().StartDestroy();
         }
 
@@ -158,6 +169,13 @@ public class MirrorControllerScript : MonoBehaviour
         {
             cma.GetComponent<Animator>().SetTrigger("handTrigger");
         }
+    }
+
+    public void DestroyCentral()
+    {
+        Instantiate(exitDoor, new Vector3(303.56f, 4.41f, 0.69f), Quaternion.identity);
+        Instantiate(part, centralMirror.transform.position, Quaternion.identity);
+        Destroy(centralMirror);
     }
 
 

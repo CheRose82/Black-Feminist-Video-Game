@@ -92,6 +92,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject MargLevel4;
     public GameObject dj;
     public GameObject margHmph;
+    public GameObject breakingMirror;
     
 
 
@@ -215,6 +216,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
     {
         GetComponent<playerScript>().Dance();
         Debug.Log("the Lua script should have sent it to the player script");
+        breakingMirror.GetComponent<MirrorBreaks>().CrackMirror();
     }
 
     public void SabineUmbrella()

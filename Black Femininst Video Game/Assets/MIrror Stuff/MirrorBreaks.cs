@@ -17,5 +17,6 @@ public class MirrorBreaks : MonoBehaviour
         Instantiate(glassParticles, transform.position, Quaternion.identity);
         MirrorRain.GetComponent<GlassRainScript>().RainGlass();
         Destroy(this.gameObject);
+        Debug.Log("it should be destroyed");
     }
 }

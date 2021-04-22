@@ -48289,6 +48289,7 @@ GameObject:
   - component: {fileID: 7349322548096923345}
   - component: {fileID: 7349322548096923310}
   - component: {fileID: 2404468940915354025}
+  - component: {fileID: 1094606727974046655}
   m_Layer: 0
   m_Name: Glass Part
   m_TagString: Untagged
@@ -53289,6 +53290,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1094606727974046655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7349322548096923311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb81d5c02baa4691a21ac222736b079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glassParticles: {fileID: 8601584492886307903, guid: 548f2c0a870974781ada294641bee7c7,
+    type: 3}
 --- !u!1 &7349322548139269818
 GameObject:
   m_ObjectHideFlags: 0

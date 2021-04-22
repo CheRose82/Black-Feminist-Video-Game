@@ -57971,13 +57971,14 @@ GameObject:
   - component: {fileID: 1920325296969104493}
   - component: {fileID: 1920325296969104490}
   - component: {fileID: 1920325296969104491}
+  - component: {fileID: 3390852885741442046}
   m_Layer: 0
   m_Name: Ef_SnowFlakes01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1920325296969104493
 Transform:
   m_ObjectHideFlags: 0
@@ -62826,6 +62827,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3390852885741442046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920325296969104488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c80fbcba60fc435abdee4c4424fba95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1920325297032846481
 GameObject:
   m_ObjectHideFlags: 0
@@ -77407,7 +77420,7 @@ GameObject:
   - component: {fileID: 1920325297268671342}
   - component: {fileID: 6775163740762971241}
   m_Layer: 0
-  m_Name: Ef_IceMagicGlow01
+  m_Name: Ef_IceMagicGlowFree01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

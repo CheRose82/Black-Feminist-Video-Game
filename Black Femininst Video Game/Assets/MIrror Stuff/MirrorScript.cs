@@ -46,7 +46,7 @@ public class MirrorScript : MonoBehaviour
 
     public void StartDestroy()
     {
-        Invoke(nameof(SparkleDestroy), Random.Range(0f, .1f));
+        Invoke(nameof(SparkleDestroy), Random.Range(0f, .5f));
     }
     public void SparkleDestroy()
     {

@@ -35,6 +35,8 @@ public class playerScript : MonoBehaviour
     //sfx
     public AudioClip jumpClip;
     public AudioSource playerSource;
+
+    public GameObject glassRain;
     
     // Start is called before the first frame update
     void Start()
@@ -157,7 +159,19 @@ public class playerScript : MonoBehaviour
             anim.SetBool("isRunning", false);
             anim.SetBool("isOnGround", true);
             anim.SetTrigger("umbrellaTrigger");
+            GlassOnJonas();
         }
+
+        //raise hand, end level
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isOnGround", true);
+            anim.SetTrigger("handTrigger");
+            
+        }
+
+
 
 
         ////if statements for the horizontal flip
@@ -382,5 +396,10 @@ public class playerScript : MonoBehaviour
         Instantiate(DBp50, transform.position + new Vector3(0, -100, 0), Quaternion.identity);
         Debug.Log("He instantiated the dialgue box");
 
+    }
+
+    public void GlassOnJonas()
+    {
+        Instantiate(glassRain, transform.position + new Vector3(0, 20, 0), Quaternion.identity);
     }
 }
