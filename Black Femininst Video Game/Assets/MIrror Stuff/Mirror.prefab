@@ -29,8 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6006425394207438700}
-  - {fileID: 6706608558340099222}
-  - {fileID: 7102321064158508667}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,7 +62,7 @@ GameObject:
   - component: {fileID: 6451677102104535655}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: NicolePlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,12 +74,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944805563549685767}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.115, z: 0}
-  m_LocalScale: {x: 0.06968091, y: 0.20756, z: 0.1675362}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: -8.71838, z: 0}
+  m_LocalScale: {x: 8.127168, y: 314.7115, z: 12.701281}
   m_Children: []
-  m_Father: {fileID: 5633418359304620705}
-  m_RootOrder: 2
+  m_Father: {fileID: 6006425394207438700}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4453758834826513550
 MeshFilter:
@@ -157,7 +155,7 @@ GameObject:
   - component: {fileID: 2228643866456937726}
   m_Layer: 0
   m_Name: nicole dancing frame 1
-  m_TagString: Untagged
+  m_TagString: NicoleAnim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,12 +167,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2781658919352425336}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.086, z: -0.01}
-  m_LocalScale: {x: 1.6913873, y: 1.6913873, z: 1.6913873}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -15.162433, y: -6.519842, z: 0}
+  m_LocalScale: {x: 197.27335, y: 128.2277, z: 2564.554}
   m_Children: []
-  m_Father: {fileID: 5633418359304620705}
-  m_RootOrder: 1
+  m_Father: {fileID: 6006425394207438700}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3070273401822172372
 SpriteRenderer:

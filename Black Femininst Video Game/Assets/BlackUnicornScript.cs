@@ -9,6 +9,7 @@ public class BlackUnicornScript : MonoBehaviour
     //3 Running with tail
     //4 Glitter Bomb
     //5 Kick
+    public GameObject unicornAnim;
     public Animator anim;
     public int level;
     public GameObject player;
@@ -32,18 +33,20 @@ public class BlackUnicornScript : MonoBehaviour
         {
             Invoke(nameof(DestroyUnicorn), 10f);
         }
+
+        GoIdle();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(level == 1)
+        if(level == 1 || level == 2)
         {
             //idle
             if (AIBehavior == 1)
             {
-                //set animation to idle
+                GoIdle();
             }
 
             //running without tail
@@ -53,6 +56,10 @@ public class BlackUnicornScript : MonoBehaviour
                 {
                     transform.Translate(-speed, 0, 0);
                     //set animation to running with tail
+                    StopIdle();
+                    anim.SetBool("isRunning", true);
+                    anim.SetBool("hasTail", false);
+
                 }
                 else
                 {
@@ -65,6 +72,9 @@ public class BlackUnicornScript : MonoBehaviour
             {
                 //set run with hair animation
                 transform.Translate(speed, 0, 0);
+                StopIdle();
+                anim.SetBool("isRunning", true);
+                anim.SetBool("hasTail", true);
 
 
             }
@@ -72,11 +82,17 @@ public class BlackUnicornScript : MonoBehaviour
             if (AIBehavior == 4)
             {
                 //fire glitter bomb animation
+                StopIdle();
+                anim.SetTrigger("isSneezing");
+                Invoke(nameof(GoIdle), 1);
             }
 
             if (AIBehavior == 5)
             {
                 //fire kicking animation
+                StopIdle();
+                anim.SetTrigger("kickTrigger");
+                Invoke(nameof(GoIdle), 1);
             }
 
             if (AIBehavior == 6)// Run away to next location after being petted by Sabine
@@ -96,6 +112,10 @@ public class BlackUnicornScript : MonoBehaviour
                 {
                     transform.Translate(speed, 0, 0);
                     //set animation to running with tail
+                    StopIdle();
+                    anim.SetBool("isRunning", true);
+                    anim.SetBool("hasTail", true);
+
                 }
                 else
                 {
@@ -160,10 +180,24 @@ public class BlackUnicornScript : MonoBehaviour
     {
         //seitch to running with Tail animation
         runawayStarted = true;
+        AIBehavior = 3;
+        //unicornAnim.transform.localEulerAngles = new Vector3(0, 180, 0);
     }
 
     public void DestroyUnicorn()
     {
         Destroy(this.gameObject);
     }
+
+    public void GoIdle()
+    {
+        anim.SetBool("isIdle", true);
+        unicornAnim.transform.localEulerAngles = new Vector3(0, 180, 0);
+    }
+    public void StopIdle()
+    {
+        anim.SetBool("isIdle", false);
+        //unicornAnim.transform.localEulerAngles = new Vector3(0, 0, 0);
+    }
+
 }

@@ -135,6 +135,30 @@ public class playerScript : MonoBehaviour
             ShootEnergyBall();
         }
 
+        //goddess pose
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isOnGround", true);
+            anim.SetTrigger("goddessTrigger");
+        }
+
+        //dacne
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isOnGround", true);
+            anim.SetTrigger("danceTrigger");
+        }
+
+        //umbrella pose
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isOnGround", true);
+            anim.SetTrigger("umbrellaTrigger");
+        }
+
 
         ////if statements for the horizontal flip
         //if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))

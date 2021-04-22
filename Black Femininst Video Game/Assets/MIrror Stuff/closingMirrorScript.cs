@@ -20,7 +20,11 @@ public class closingMirrorScript : MonoBehaviour
     {
         if (activated)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            if(Vector3.Distance(transform.position, player.transform.position) > 7)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            }
+            
             
         }
     }

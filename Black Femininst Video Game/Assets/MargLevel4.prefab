@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 3947740514584038942}
   - component: {fileID: 4434319106059684666}
   - component: {fileID: 6365542945091798615}
+  - component: {fileID: 1974692263}
   m_Layer: 0
   m_Name: MargLevel4
   m_TagString: Untagged
@@ -130,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 1639167179645666567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 156.06, y: 10.8, z: 0}
-  m_LocalScale: {x: 6.6536, y: 9.7507, z: 1}
+  m_LocalScale: {x: 3.047349, y: 4.465821, z: 0.458}
   m_Children:
   - {fileID: 1434965813}
   m_Father: {fileID: 0}
@@ -151,7 +152,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639167179645666567}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -209,3 +210,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dbFinal: {fileID: 4573298836276002911, guid: 18fa27a9d9ab249128f0f09adc1fb60b, type: 3}
+  margAnim: {fileID: 1434965812}
+  anim: {fileID: 1434965814}
+  level: 2
+  leaving: 0
+--- !u!114 &1974692263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639167179645666567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342dac0e2454d45308ebb0a826bca9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

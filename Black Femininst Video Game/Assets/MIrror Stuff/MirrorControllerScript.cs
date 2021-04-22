@@ -5,10 +5,19 @@ using UnityEngine;
 public class MirrorControllerScript : MonoBehaviour
 {
     public GameObject[] mirrors;
+    public GameObject[] mirrorPlane;
+    public GameObject[] nicoleAnm;
     public GameObject[] closingMirrors;
+    public GameObject[] cmPlane;
+    public GameObject[] cmAnim;
 
     public GameObject blackoutBox;
     public GameObject centralMirror;
+    public GameObject centralAnim;
+    public GameObject centralPlane;
+
+    public Animator anim;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +25,23 @@ public class MirrorControllerScript : MonoBehaviour
         closingMirrors = GameObject.FindGameObjectsWithTag("Closing Mirrors");
         centralMirror = GameObject.Find("Central Mirror");
         blackoutBox = GameObject.Find("Blackout");
+        cmPlane = GameObject.FindGameObjectsWithTag("NicolePlane");
+        cmAnim = GameObject.FindGameObjectsWithTag("NicoleAnim");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            DanceNicole();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            HandNicole();
+        }
     }
 
     public void RaiseMirrors()
@@ -53,6 +73,14 @@ public class MirrorControllerScript : MonoBehaviour
         {
             m.GetComponentInChildren<MeshRenderer>().enabled = false;
         }
+        foreach (GameObject cmp in cmPlane)
+        {
+            cmp.GetComponent<MeshRenderer>().enabled = false;
+        }
+        foreach(GameObject cma in cmAnim)
+        {
+            cma.GetComponent<SpriteRenderer>().enabled = false;
+        }
 
         //blackout the closing mirrors
         //change this to sprite renderer when you get theh sprites
@@ -81,6 +109,14 @@ public class MirrorControllerScript : MonoBehaviour
         {
             cm.GetComponentInChildren<MeshRenderer>().enabled = true;
         }
+        foreach (GameObject cmp in cmPlane)
+        {
+            cmp.GetComponent<MeshRenderer>().enabled = true;
+        }
+        foreach (GameObject cma in cmAnim)
+        {
+            cma.GetComponent<SpriteRenderer>().enabled = true;
+        }
 
         blackoutBox.GetComponent<blackoutBoxScript>().UnBlackout();
     }
@@ -88,6 +124,8 @@ public class MirrorControllerScript : MonoBehaviour
     public void CentralMirrorOn()
     {
         centralMirror.GetComponentInChildren<MeshRenderer>().enabled = true;
+        centralAnim.GetComponent<SpriteRenderer>().enabled = true;
+        centralPlane.GetComponent<MeshRenderer>().enabled = true;
         //play cmirror appearing sound effect
     }
 
@@ -106,5 +144,21 @@ public class MirrorControllerScript : MonoBehaviour
         }
     }
 
-    
+    public void DanceNicole()
+    {
+        foreach (GameObject cma in cmAnim)
+        {
+            cma.GetComponent<Animator>().SetTrigger("danceTrigger");
+        }
+    }
+
+    public void HandNicole()
+    {
+        foreach (GameObject cma in cmAnim)
+        {
+            cma.GetComponent<Animator>().SetTrigger("handTrigger");
+        }
+    }
+
+
 }
