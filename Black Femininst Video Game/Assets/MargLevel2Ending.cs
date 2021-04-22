@@ -10,7 +10,7 @@ public class MargLevel2Ending : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(MargAppear), 3);
+        //Invoke(nameof(MargAppear), 3);
         Invoke(nameof(StartDialogue), 4);
         
     }

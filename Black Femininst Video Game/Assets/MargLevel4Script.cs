@@ -8,6 +8,7 @@ public class MargLevel4Script : MonoBehaviour
     public GameObject margAnim;
     public Animator anim;
     public int level;
+    public int levelPart;
     public bool leaving;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,18 @@ public class MargLevel4Script : MonoBehaviour
 
         if(level == 2)
         {
-            transform.position = new Vector3(242.27f, 7.41f, 0);
+            if (levelPart == 1)
+            {
+                transform.position = new Vector3(242.27f, 7.41f, 0);
+            }
+
+            if(levelPart == 2)
+            {
+                //redundant
+                //transform.position = transform.position;
+                Invoke(nameof(PoofIn), 3);
+            }
+            
         }
         
     }
@@ -41,14 +53,20 @@ public class MargLevel4Script : MonoBehaviour
 
     public void PoofIn()
     {
-        margAnim.GetComponent<SpriteRenderer>().enabled = true;
+        //margAnim.GetComponent<SpriteRenderer>().enabled = true;
         anim.SetBool("doingNothing", false);
         anim.SetTrigger("poofIn");
+        Invoke(nameof(Appear), 0.5f);
     }
 
     public void Level2Leave()
     {
         leaving = true;
+    }
+
+    public void Appear()
+    {
+        margAnim.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     
