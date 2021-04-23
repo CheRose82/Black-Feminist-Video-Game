@@ -116,7 +116,7 @@ public class BlackUnicornScript : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, player.transform.position) < 35f)
                 {
-                    transform.Translate(speed, 0, 0);
+                    transform.Translate(speed + .02f, 0, 0);
                     //set animation to running with tail
                     StopIdle();
                     anim.SetBool("isRunning", true);

@@ -4566,8 +4566,8 @@ MonoBehaviour:
         y: 851
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 325.09576}
-    canvasZoom: 0.86861366
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8584089
   - id: 2
     fields:
     - title: Title
@@ -4786,7 +4786,7 @@ MonoBehaviour:
         typeString: 
       - title: Dialogue Text
         value: I don't know. Usually in games like these you have to use Grips or
-          gumption to find the path.
+          gumption to find the path.\.
         type: 0
         typeString: 
       - title: Parenthetical
@@ -4967,7 +4967,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.76805556
+    canvasZoom: 1.1331133
   - id: 3
     fields:
     - title: Title
@@ -28695,7 +28695,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "Shh! No. Stop hacking and sta\x03rt listening, Jonas!"
+        value: "Shh! No. Stop hacking and sta\x03rt listening, Jonas!\\."
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -28812,8 +28812,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 22.816963
-        y: 311
+        x: 54.816963
+        y: 298
         width: 160
         height: 30
     - id: 12
@@ -28835,15 +28835,15 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Stay and fight
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: STAY AND FIGHT
+        value: 'A: Run and hide.'
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -28877,8 +28877,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 215.01627
-        y: 363.07275
+        x: 291.81696
+        y: 358
         width: 160
         height: 30
     - id: 13
@@ -28900,15 +28900,15 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 2
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: Run and hide
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: RUN AND HIDE
+        value: 'B: Stay and fight.'
         type: 0
         typeString: CustomFieldType_Text
       - title: Parenthetical
@@ -28942,8 +28942,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 0
-        y: 414.38083
+        x: 54.816963
+        y: 348
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
@@ -30288,7 +30288,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.80282724
+    canvasZoom: 0.7825169
   - id: 22
     fields:
     - title: Title
@@ -30850,7 +30850,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 39
-        y: 270
+        y: 230.98059
         width: 160
         height: 30
     - id: 2
@@ -31276,8 +31276,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 19
-        y: 342
+        x: 20.258698
+        y: 313.05008
         width: 160
         height: 30
     - id: 8
@@ -31558,8 +31558,8 @@ MonoBehaviour:
         y: 542
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.79447544
+    canvasScrollPosition: {x: 0, y: 73.186615}
+    canvasZoom: 1.1623876
   - id: 25
     fields:
     - title: Title
