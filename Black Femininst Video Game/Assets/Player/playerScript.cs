@@ -192,6 +192,15 @@ public class playerScript : MonoBehaviour
             
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            anim.SetBool("usingTelescope", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            anim.SetBool("usingTelescope", true);
+        }
+
 
 
 

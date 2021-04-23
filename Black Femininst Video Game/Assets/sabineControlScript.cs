@@ -9,6 +9,7 @@ public class sabineControlScript : MonoBehaviour
     public bool grounded;
     public GameObject SabineAnim;
     public Animator anim;
+    public GameObject telescope;
 
 
     // Start is called before the first frame update
@@ -103,5 +104,10 @@ public class sabineControlScript : MonoBehaviour
     public void Skel()
     {
         anim.SetTrigger("skeleton");
+    }
+
+    public void GiveTeleScopeCave()
+    {
+        Instantiate(telescope, transform.position, Quaternion.identity);
     }
 }

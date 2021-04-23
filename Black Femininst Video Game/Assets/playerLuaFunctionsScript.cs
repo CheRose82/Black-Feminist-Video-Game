@@ -255,7 +255,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
 
     public void GiveTelescope()
     {
-        realmHolder.GetComponent<realmHolderScript>().SabineGiveTelescope();
+        sabine.GetComponent<sabineControlScript>().GiveTeleScopeCave();
     }
 
     public void GameOverMargAppears()
