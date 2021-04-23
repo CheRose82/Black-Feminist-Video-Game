@@ -7,6 +7,7 @@ public class playerScript : MonoBehaviour
 
     public float runSpeed;
     public GameObject jonasAnim;
+    public GameObject sabine;
     //public GameObject sprite;
     //public GameObject nicole;
     public Animator anim;
@@ -22,6 +23,9 @@ public class playerScript : MonoBehaviour
     public GameObject crackMirror;
     public GameObject breakFreeMirror;
     public GameObject DBp50;
+    public GameObject DBp38Oww;
+    public GameObject DBp39SeeAllShe;
+    public GameObject axe;
     public bool Grounded;
     public bool walking;
     //public Animator anim;
@@ -30,6 +34,7 @@ public class playerScript : MonoBehaviour
     public bool readyToShoot;
     public bool hasControl = true;
     public bool RideUnicornAttempt;
+    public bool canPetUnicorn;
     private Vector3 returnPos;
 
     //sfx
@@ -37,6 +42,8 @@ public class playerScript : MonoBehaviour
     public AudioSource playerSource;
 
     public GameObject glassRain;
+    public GameObject womensVoicePart;
+    public GameObject DBpWeDidIt;
     
     // Start is called before the first frame update
     void Start()
@@ -48,6 +55,8 @@ public class playerScript : MonoBehaviour
         facingRight = true;readyToShoot = true;
         hasControl = true;
         breakFreeMirror = GameObject.Find("Mirror Break Free");
+        axe = GameObject.Find("axe");
+        sabine = GameObject.Find("Sabine");
     }
 
     // Update is called once per frame
@@ -162,12 +171,24 @@ public class playerScript : MonoBehaviour
             GlassOnJonas();
         }
 
-        //raise hand, end level
+        //raise hand, end level, also pet the horse
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             anim.SetBool("isRunning", false);
             anim.SetBool("isOnGround", true);
             anim.SetTrigger("handTrigger");
+            if(canPetUnicorn == true)
+            {
+                Invoke(nameof(UnicornRunAway), 3.5f);
+                Instantiate(DBp39SeeAllShe, transform.position, Quaternion.identity);
+            }
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            Bones();
+            sabine.GetComponent<sabineControlScript>().Skel();
             
         }
 
@@ -226,27 +247,44 @@ public class playerScript : MonoBehaviour
         if (other.CompareTag("Axe"))
         {
             Destroy(other.gameObject);
-            Debug.Log("We touched the axe");
+            anim.SetBool("isChopping", true);
+            Invoke(nameof(StopChopping), 7);
+            Invoke(nameof(StartVoiceParticles), 2);
+            //Debug.Log("We touched the axe");
             //animate holding up the Axe
         }
 
         //unicorn
         if (other.CompareTag("BlackUnicorn"))
         {
-            Debug.Log("he should have touched the unicorn");
-            if(RideUnicornAttempt == false)
+            if(canPetUnicorn == false)
             {
-                //trigger ride horse animation
-                // and then trigger hiim getting kicked off
-                KickedOffUnicorn();
-                RideUnicornAttempt = true;
+                Debug.Log("he should have touched the unicorn");
+                if (RideUnicornAttempt == false)
+                {
+                    //trigger ride horse animation
+                    // and then trigger hiim getting kicked off
+                    unicorn.GetComponent<BlackUnicornScript>().Kick();
+                    KickedOffUnicorn();
+                    RideUnicornAttempt = true;
+                    Instantiate(DBp38Oww, transform.position, Quaternion.identity);
+                    canPetUnicorn = true;
+                }
+                else //after above when he's abou tto get glitter bombed
+                {
+                    //invoke the glitter bomb
+
+                    //unicorn.GetComponent<BlackUnicornScript>().AIBehavior = 4;
+                    Invoke("GlitterBomb", 1.0f);
+                    rb.AddForce(-700, 150, 0);
+                    Debug.Log("The glitter bomb happened on the player side");
+                }
             }
-            else //after above when he's abou tto get glitter bombed
+            else // you have already beenkicked and can now pet the unicorn
             {
-                //invoke the glitter bomb
-                Invoke("GlitterBomb", 1.0f);
-                Debug.Log("The glitter bomb happened on the player side");
+                Invoke(nameof(UnicornRunAway), 2);
             }
+            
         }
     }
 
@@ -324,12 +362,13 @@ public class playerScript : MonoBehaviour
 
     public void Bones()
     {
-        //play animation for turning to bones
+        anim.SetTrigger("becomeSkeleton");
     }
 
     public void KickedOffUnicorn()
     {
         rb.AddForce(-700, 150, 0);
+        KickedAnim();
     }
 
     public void GlitterBomb()
@@ -401,5 +440,39 @@ public class playerScript : MonoBehaviour
     public void GlassOnJonas()
     {
         Instantiate(glassRain, transform.position + new Vector3(0, 20, 0), Quaternion.identity);
+    }
+
+    public void KickedAnim()
+    {
+        anim.SetTrigger("abductedTrigger");
+    }
+
+    public void UnicornRunAway()
+    {
+        unicorn.GetComponent<BlackUnicornScript>().AIBehavior = 3;
+    }
+
+    public void StopChopping()
+    {
+        anim.SetBool("isChopping", false);
+    }
+
+    public void StartVoiceParticles()
+    {
+        Instantiate(womensVoicePart, transform.position + new Vector3(25, 5, 0), Quaternion.identity);
+        Debug.Log("particles should be flowing");
+    }
+
+    public void GiveHair()
+    {
+        unicorn.GetComponent<BoxCollider>().enabled = false;
+        anim.SetTrigger("cutHair");
+        Invoke(nameof(UnicornRunAway), 5);
+        Invoke(nameof(WeDidIt), 10);
+    }
+
+    public void WeDidIt()
+    {
+        Instantiate(DBpWeDidIt, transform.position, Quaternion.identity);
     }
 }

@@ -64,9 +64,15 @@ public class sabineControlScript : MonoBehaviour
                 rb.velocity = Vector3.up * 7.5f;
                 anim.SetTrigger("jumpTrigger");
             }
-
-           
         }
+
+        //pet something. probably a horse
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetTrigger("reachPet");
+        }
+
 
     }
 
@@ -83,6 +89,7 @@ public class sabineControlScript : MonoBehaviour
         {
             //start lookinh in box animation
         }
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -92,5 +99,9 @@ public class sabineControlScript : MonoBehaviour
             grounded = false;
             anim.SetBool("isOnGround", false);
         }
+    }
+    public void Skel()
+    {
+        anim.SetTrigger("skeleton");
     }
 }

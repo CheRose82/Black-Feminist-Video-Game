@@ -19,6 +19,7 @@ public class BlackUnicornScript : MonoBehaviour
     public float speed;
     public bool runawayStarted;
     public bool runStarted;
+    public bool facingLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +29,10 @@ public class BlackUnicornScript : MonoBehaviour
 
         //if on level 2, invoke the functions to runoff screen
         Invoke(nameof(SayGoodbye), 2f);
-        Invoke(nameof(Level2RunOff), 3.5f);
+        
         if(level ==2)
         {
+            Invoke(nameof(Level2RunOff), 3.5f);
             Invoke(nameof(DestroyUnicorn), 10f);
         }
 
@@ -46,7 +48,7 @@ public class BlackUnicornScript : MonoBehaviour
             //idle
             if (AIBehavior == 1)
             {
-                GoIdle();
+                //GoIdle();
             }
 
             //running without tail
@@ -54,6 +56,10 @@ public class BlackUnicornScript : MonoBehaviour
             {
                 if (Vector3.Distance(transform.position, player.transform.position) > 12f)
                 {
+                    if(facingLeft)
+                    {
+                        unicornAnim.transform.localEulerAngles = new Vector3(0, 0, 0);
+                    }
                     transform.Translate(-speed, 0, 0);
                     //set animation to running with tail
                     StopIdle();
@@ -64,6 +70,7 @@ public class BlackUnicornScript : MonoBehaviour
                 else
                 {
                     AIBehavior = 1;
+                    GoIdle();
                 }
             }
 
@@ -79,21 +86,21 @@ public class BlackUnicornScript : MonoBehaviour
 
             }
 
-            if (AIBehavior == 4)
-            {
-                //fire glitter bomb animation
-                StopIdle();
-                anim.SetTrigger("isSneezing");
-                Invoke(nameof(GoIdle), 1);
-            }
+            //if (AIBehavior == 4)
+            //{
+            //    //fire glitter bomb animation
+            //    StopIdle();
+            //    anim.SetTrigger("issSneezing");
+            //    Invoke(nameof(GoIdle), 1);
+            //}
 
-            if (AIBehavior == 5)
-            {
-                //fire kicking animation
-                StopIdle();
-                anim.SetTrigger("kickTrigger");
-                Invoke(nameof(GoIdle), 1);
-            }
+            //if (AIBehavior == 5)
+            //{
+            //    //fire kicking animation
+            //    StopIdle();
+            //    anim.SetBool("isKicking", true);
+            //    Invoke(nameof(GoIdle), 1);
+            //}
 
             if (AIBehavior == 6)// Run away to next location after being petted by Sabine
             {
@@ -103,8 +110,7 @@ public class BlackUnicornScript : MonoBehaviour
                     //turn around
 
                     //drop the dialogue box onto sabine\
-                    dialogBoxRun.transform.position = sabine.transform.position + new Vector3(0, 10, 0);
-                    dialogBoxRun.GetComponent<Rigidbody>().useGravity = true;
+                    Instantiate(dialogBoxRun, transform.position, Quaternion.identity);
                 }
 
 
@@ -136,6 +142,11 @@ public class BlackUnicornScript : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Level1Approach();
+        }
+
     }
 
     //public void SetUnicornBehavior(int behavior)
@@ -145,7 +156,8 @@ public class BlackUnicornScript : MonoBehaviour
 
     public void Idle()
     {
-        AIBehavior = 1;
+        //AIBehavior = 1;
+        anim.SetBool("isIdle", true);
     }
 
     public void NoTail()
@@ -162,6 +174,10 @@ public class BlackUnicornScript : MonoBehaviour
     {
         //animation for glitter bomb
         //player.GetComponent<Rigidbody>().AddForce(-300, 70, 0);
+
+        StopIdle();
+        anim.SetBool("iisSneezing", true);
+        Invoke(nameof(GoIdle), 1);
         Debug.Log("The glitter bomb happened on the horse side");
     }
 
@@ -192,6 +208,8 @@ public class BlackUnicornScript : MonoBehaviour
     public void GoIdle()
     {
         anim.SetBool("isIdle", true);
+        anim.SetBool("isKicking", false);
+        anim.SetBool("iisSneezing", false);
         unicornAnim.transform.localEulerAngles = new Vector3(0, 180, 0);
     }
     public void StopIdle()
@@ -200,4 +218,19 @@ public class BlackUnicornScript : MonoBehaviour
         //unicornAnim.transform.localEulerAngles = new Vector3(0, 0, 0);
     }
 
+    public void Level1Approach()
+    {
+        facingLeft = true;
+        AIBehavior = 2;
+    }
+
+    public void Kick()
+    {
+        //fire kicking animation
+        StopIdle();
+        anim.SetBool("isKicking", true);
+        Invoke(nameof(GoIdle), 0.7f);
+    }
 }
+
+

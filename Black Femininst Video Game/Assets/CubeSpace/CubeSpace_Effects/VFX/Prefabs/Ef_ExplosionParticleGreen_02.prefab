@@ -14202,6 +14202,7 @@ GameObject:
   - component: {fileID: 4000013554868796}
   - component: {fileID: 198000011284887558}
   - component: {fileID: 199000013183183738}
+  - component: {fileID: -8458320086255959214}
   m_Layer: 0
   m_Name: Ef_ExplosionParticleGreen_02
   m_TagString: Untagged
@@ -14218,7 +14219,7 @@ Transform:
   m_GameObject: {fileID: 1000013412678290}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.01, y: -0, z: -4.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.5303, y: 5.5303, z: 5.5303}
   m_Children:
   - {fileID: 4000013936669906}
   - {fileID: 4000013674352120}
@@ -18921,6 +18922,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-8458320086255959214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013412678290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16ca89543b5c463888c273fe9b86a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyExplosion: 1.5
 --- !u!1 &1000013881227514
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
         // Make the functions available to Lua: (Replace these lines with your own.)
         Lua.RegisterFunction("DebugLog", this, SymbolExtensions.GetMethodInfo(() => DebugLog(string.Empty)));
         Lua.RegisterFunction("AddOne", this, SymbolExtensions.GetMethodInfo(() => AddOne((double)0)));
-        Lua.RegisterFunction("SoundCloudStart", this, typeof(playerLuaFunctionsScript).GetMethod("SoundCloudStart"));
+        //Lua.RegisterFunction("SoundCloudStart", this, typeof(playerLuaFunctionsScript).GetMethod("SoundCloudStart"));
         Lua.RegisterFunction("TurnToBones", this, typeof(playerLuaFunctionsScript).GetMethod("TurnToBones"));
         Lua.RegisterFunction("SoundSpawnStart", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStart"));
         Lua.RegisterFunction("SoundSpawnStop", this, typeof(playerLuaFunctionsScript).GetMethod("SoundSpawnStop"));
@@ -44,6 +44,8 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("GiveTelescope", this, typeof(playerLuaFunctionsScript).GetMethod("GiveTelescope"));
         Lua.RegisterFunction("GameOverMargAppears", this, typeof(playerLuaFunctionsScript).GetMethod("GameOverMargAppears"));
         Lua.RegisterFunction("OhSnapDJ", this, typeof(playerLuaFunctionsScript).GetMethod("OhSnapDJ"));
+        Lua.RegisterFunction("ReadyGlitterBomb", this, typeof(playerLuaFunctionsScript).GetMethod("ReadyGlitterBomb"));
+        Lua.RegisterFunction("GiveUniHair", this, typeof(playerLuaFunctionsScript).GetMethod("GiveUniHair"));
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
@@ -69,7 +71,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
         return value + 1;
     }
 
-    public GameObject soundCloudControl;
+    //public GameObject soundCloudControl;
     public GameObject soundSpawnControl;
     public GameObject bees;
     public GameObject unicorn;
@@ -104,10 +106,10 @@ public class playerLuaFunctionsScript : MonoBehaviour
 
     }
 
-    public void SoundCloudStart()
-    {
-        soundCloudControl.GetComponent<soundCloudController>().StartSondCloud();
-    }
+    //public void SoundCloudStart()
+    //{
+    //    soundCloudControl.GetComponent<soundCloudController>().StartSondCloud();
+    //}
 
     public void TurnToBones()
     {
@@ -269,5 +271,15 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void Level2MargHmph()
     {
         MargLevel4.GetComponent<MargLevel4Script>().Level2Leave();
+    }
+
+    public void ReadyGlitterBomb()
+    {
+        player.GetComponent<playerScript>().RideUnicornAttempt = true;
+    }
+
+    public void GiveUniHair()
+    {
+        player.GetComponent<playerScript>().GiveHair();
     }
 }

@@ -50,6 +50,59 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &-8075272925569738554
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isRunning
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isOnGround
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -673687974781587580}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.40000004
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-7972593611068769126
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: becomeSkeleton
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -3706336551604569805}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.90625
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-7923208170931407601
 AnimatorState:
   serializedVersion: 5
@@ -121,67 +174,67 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 384117934648649535}
-    m_Position: {x: 522.3684, y: 224.4737, z: 0}
+    m_Position: {x: 460, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5740204648090384930}
-    m_Position: {x: 700, y: -300, z: 0}
+    m_Position: {x: 0, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5034647074320110475}
-    m_Position: {x: 680, y: -220, z: 0}
+    m_Position: {x: 740, y: -260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4394861511562562283}
-    m_Position: {x: 740, y: -60, z: 0}
+    m_Position: {x: 810, y: -270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 269211948017285097}
-    m_Position: {x: 700, y: -370, z: 0}
+    m_Position: {x: 530, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2819615905041766387}
-    m_Position: {x: 430, y: -380, z: 0}
+    m_Position: {x: 490, y: -420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7731778624910792501}
-    m_Position: {x: 180, y: -380, z: 0}
+    m_Position: {x: 250, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1140020625793293954}
-    m_Position: {x: 0, y: 90, z: 0}
+    m_Position: {x: 20, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6238883869612393024}
-    m_Position: {x: 240, y: -250, z: 0}
+    m_Position: {x: 300, y: -290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1705365685653182828}
-    m_Position: {x: 720, y: -150, z: 0}
+    m_Position: {x: 790, y: -360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5385258393664077577}
-    m_Position: {x: 50, y: -60, z: 0}
+    m_Position: {x: -50, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -541459948046509452}
-    m_Position: {x: 440, y: -310, z: 0}
+    m_Position: {x: 500, y: -350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3922358126602001588}
-    m_Position: {x: 450, y: -250, z: 0}
+    m_Position: {x: 510, y: -290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4208450788006376787}
-    m_Position: {x: 320, y: -40, z: 0}
+    m_Position: {x: 570, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1898005049660332421}
-    m_Position: {x: 500, y: -80, z: 0}
+    m_Position: {x: 570, y: -360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2941349246815497441}
-    m_Position: {x: 240, y: -320, z: 0}
+    m_Position: {x: 300, y: -360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3706336551604569805}
-    m_Position: {x: 680, y: -420, z: 0}
+    m_Position: {x: 530, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7923208170931407601}
-    m_Position: {x: 470, y: -440, z: 0}
+    m_Position: {x: 530, y: -480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1228562768402375139}
-    m_Position: {x: 230, y: -440, z: 0}
+    m_Position: {x: 290, y: -480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2893193430934455928}
-    m_Position: {x: 220, y: -150, z: 0}
+    m_Position: {x: 240, y: -420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3663863011125730332}
-    m_Position: {x: 540, y: 70, z: 0}
+    m_Position: {x: 530, y: 200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -233,7 +286,8 @@ AnimatorState:
   m_Name: jonasAbducted
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: -4615438821040194738}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -249,6 +303,28 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-4615438821040194738
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -673687974781587580}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-4394861511562562283
 AnimatorState:
   serializedVersion: 5
@@ -336,7 +412,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: jonasSkeleton
-  m_Speed: 1
+  m_Speed: 0.1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -589,6 +665,10 @@ AnimatorState:
   - {fileID: -1432021081547688782}
   - {fileID: 4823546834566993730}
   - {fileID: -5844438798858416200}
+  - {fileID: 8041461025202781596}
+  - {fileID: 5084891083119223302}
+  - {fileID: -7972593611068769126}
+  - {fileID: 6987163894823340463}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -681,6 +761,30 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: abductedTrigger
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: isChopping
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: becomeSkeleton
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: cutHair
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -704,7 +808,8 @@ AnimatorState:
   m_Name: jonasChopping
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: -8075272925569738554}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -1043,6 +1148,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &5084891083119223302
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isChopping
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 269211948017285097}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.07535243
+  m_TransitionOffset: 0
+  m_ExitTime: 0.90624994
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &5385258393664077577
 AnimatorState:
   serializedVersion: 5
@@ -1127,6 +1257,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &6987163894823340463
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: cutHair
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 7731778624910792501}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.90625
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &7731778624910792501
 AnimatorState:
   serializedVersion: 5
@@ -1135,7 +1290,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: jonasCutHair
-  m_Speed: 1
+  m_Speed: 0.1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -1153,3 +1308,28 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &8041461025202781596
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: abductedTrigger
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -5740204648090384930}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.15337083
+  m_TransitionOffset: 0
+  m_ExitTime: 0.11207924
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
