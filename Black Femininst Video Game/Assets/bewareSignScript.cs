@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class bewareSignScript : MonoBehaviour
 {
+    public float smallX;
+    public float smallY;
+    public float smallZ;
+    public float bigX;
+    public float bigY;
+    public float bigZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +26,7 @@ public class bewareSignScript : MonoBehaviour
     {
         if (other.CompareTag("Sabine"))
         {
-            transform.localScale = new Vector3(3, 3, 1);
+            transform.localScale = new Vector3(bigX, bigY, bigZ);
         }
     }
 
@@ -28,7 +34,7 @@ public class bewareSignScript : MonoBehaviour
     {
         if (other.CompareTag("Sabine"))
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(smallX, smallY, smallZ);
         }
     }
 }

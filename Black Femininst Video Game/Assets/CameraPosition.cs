@@ -32,6 +32,11 @@ public class CameraPosition : MonoBehaviour
 
     void LateUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2.5f);
+            
+        }
         if (Cam_Behavior == 1)
         {
             if(playerObj.GetComponent<playerScript>().facingRight == true)

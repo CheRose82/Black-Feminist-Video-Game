@@ -20,6 +20,7 @@ public class BlackUnicornScript : MonoBehaviour
     public bool runawayStarted;
     public bool runStarted;
     public bool facingLeft;
+    public GameObject DBAskHer;
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +148,11 @@ public class BlackUnicornScript : MonoBehaviour
             Level1Approach();
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            Instantiate(DBAskHer, transform.position, Quaternion.identity);
+        }
+
     }
 
     //public void SetUnicornBehavior(int behavior)
@@ -176,6 +182,7 @@ public class BlackUnicornScript : MonoBehaviour
         //player.GetComponent<Rigidbody>().AddForce(-300, 70, 0);
 
         StopIdle();
+        anim.transform.localEulerAngles = new Vector3(0, 180, 0);
         anim.SetBool("iisSneezing", true);
         Invoke(nameof(GoIdle), 1);
         Debug.Log("The glitter bomb happened on the horse side");
@@ -193,6 +200,10 @@ public class BlackUnicornScript : MonoBehaviour
     }
 
     public void Level2RunOff()
+    {
+        Invoke(nameof(Level2Run), 4);
+    }
+    public void Level2Run()
     {
         //seitch to running with Tail animation
         runawayStarted = true;

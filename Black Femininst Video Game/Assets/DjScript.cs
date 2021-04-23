@@ -16,14 +16,14 @@ public class DjScript : MonoBehaviour
         {
             if(levelPart == 1)
             {
-                transform.position = new Vector3(217, 6.6f, 0);
+                transform.position = new Vector3(230, 6.6f, 0);
                 gliding = true;
-                Invoke(nameof(DJDeath), 10);
+                Invoke(nameof(DJDeath), 15);
             }
             if(levelPart == 2)
             {
                 transform.position = new Vector3(247.18f, 6.6f, 0);
-                Invoke(nameof(DJDeath), 10);
+                Invoke(nameof(DJDeath), 15);
                 anim.SetBool("bouncing", false);
             }
             
@@ -48,5 +48,10 @@ public class DjScript : MonoBehaviour
     public void DJDeath()
     {
         Destroy(this.gameObject);
+    }
+
+    public void MargLevel2Hmph()
+    {
+
     }
 }

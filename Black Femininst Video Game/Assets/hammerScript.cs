@@ -68,6 +68,11 @@ public class hammerScript : MonoBehaviour
 
     public void BreakCeiling()
     {
+        Invoke(nameof(Rise), 4.0f);
+    }
+
+    public void Rise()
+    {
         rising = true;
     }
 }

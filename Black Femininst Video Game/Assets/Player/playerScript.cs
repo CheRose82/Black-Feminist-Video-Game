@@ -28,6 +28,7 @@ public class playerScript : MonoBehaviour
     public GameObject axe;
     public bool Grounded;
     public bool walking;
+    public GameObject dbFindWhat;
     //public Animator anim;
     Rigidbody rb;
     public bool facingRight = true;
@@ -201,6 +202,16 @@ public class playerScript : MonoBehaviour
             anim.SetBool("usingTelescope", true);
         }
 
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Instantiate(dbFindWhat, transform.position, Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GiveHair();
+        }
+
 
 
 
@@ -295,6 +306,8 @@ public class playerScript : MonoBehaviour
             }
             
         }
+
+       
     }
 
     public void OnTriggerExit(Collider other)

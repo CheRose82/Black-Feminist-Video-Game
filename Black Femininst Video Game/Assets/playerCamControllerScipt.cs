@@ -22,7 +22,10 @@ public class playerCamControllerScipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 3);
+        }
     }
 
     public void OnTriggerEnter(Collider other)
