@@ -25,6 +25,7 @@ public class playerScript : MonoBehaviour
     public GameObject DBp50;
     public GameObject DBp38Oww;
     public GameObject DBp39SeeAllShe;
+    public GameObject dbHeyWatchIt;
     public GameObject axe;
     public bool Grounded;
     public bool walking;
@@ -163,6 +164,12 @@ public class playerScript : MonoBehaviour
             playerSource.PlayOneShot(energyBallClip, 7);
             
 
+        }
+
+        //hey watch it after being glitter bombed
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            HeyWatchItDB();
         }
 
         //goddess pose
@@ -304,7 +311,7 @@ public class playerScript : MonoBehaviour
         {
             if(canPetUnicorn == false)
             {
-                Debug.Log("he should have touched the unicorn");
+                //Debug.Log("he should have touched the unicorn");
                 if (RideUnicornAttempt == false)
                 {
                     //trigger ride horse animation
@@ -315,14 +322,14 @@ public class playerScript : MonoBehaviour
                     Instantiate(DBp38Oww, transform.position, Quaternion.identity);
                     canPetUnicorn = true;
                 }
-                else //after above when he's abou tto get glitter bombed
+                else //Choosing to get glitter bombed instead because you tried to steal it's horn
                 {
                     //invoke the glitter bomb
 
                     //unicorn.GetComponent<BlackUnicornScript>().AIBehavior = 4;
                     Invoke("GlitterBomb", 1.0f);
                     rb.AddForce(-700, 150, 0);
-                    Debug.Log("The glitter bomb happened on the player side");
+                    //Debug.Log("The glitter bomb happened on the player side");
                 }
             }
             else // you have already beenkicked and can now pet the unicorn
@@ -449,6 +456,7 @@ public class playerScript : MonoBehaviour
     {
         heyWatchDB.active = true;
         Debug.Log("Spawning the dialogue box worked");
+        Instantiate(dbHeyWatchIt, transform.position, Quaternion.identity);
     }
 
     public void Dance()
@@ -518,6 +526,7 @@ public class playerScript : MonoBehaviour
     public void UnicornRunAway()
     {
         unicorn.GetComponent<BlackUnicornScript>().AIBehavior = 3;
+        Invoke(nameof(YouSee), 2);
     }
 
     public void StopChopping()
@@ -542,5 +551,10 @@ public class playerScript : MonoBehaviour
     public void WeDidIt()
     {
         Instantiate(DBpWeDidIt, transform.position, Quaternion.identity);
+    }
+
+    public void YouSee()
+    {
+        Instantiate(DBp39SeeAllShe, transform.position, Quaternion.identity);
     }
 }

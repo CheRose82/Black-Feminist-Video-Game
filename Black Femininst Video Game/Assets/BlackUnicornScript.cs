@@ -111,7 +111,7 @@ public class BlackUnicornScript : MonoBehaviour
                     //turn around
 
                     //drop the dialogue box onto sabine\
-                    Instantiate(dialogBoxRun, transform.position, Quaternion.identity);
+                    //Instantiate(dialogBoxRun, transform.position, Quaternion.identity);
                 }
 
 
