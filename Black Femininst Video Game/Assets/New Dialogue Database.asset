@@ -46830,11 +46830,11 @@ MonoBehaviour:
         type: 3
         typeString: CustomFieldType_Files
       - title: Description
-        value: 
+        value: Program him to pop when this line of dialogue plays
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -46880,8 +46880,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 29
-        y: 70
+        x: 21
+        y: 149
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
