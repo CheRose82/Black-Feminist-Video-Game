@@ -58,6 +58,8 @@ public class playerScript : MonoBehaviour
     public GameObject womensVoicePart;
     public GameObject DBpWeDidIt;
     public GameObject whiteJonas;
+
+    public GameObject dj;
     
     // Start is called before the first frame update
     void Start()
@@ -556,5 +558,22 @@ public class playerScript : MonoBehaviour
     public void YouSee()
     {
         Instantiate(DBp39SeeAllShe, transform.position, Quaternion.identity);
+    }
+
+    public void EnterDJ()
+    {
+        Instantiate(dj, transform.position + new Vector3(10, 6, 0), Quaternion.identity);
+    }
+
+    public void OhSNapDJ()
+    {
+        dj.transform.position = transform.position + new Vector3(-.45f, 6.39f, 0);
+        dj.transform.localScale = new Vector3(.893f, .893f, .893f);
+        dj.GetComponent<DjScript>().gliding = true;
+        Invoke(nameof(OhSnapDie), 5);
+    }
+    public void OhSnapDie()
+    {
+        Destroy(dj);
     }
 }

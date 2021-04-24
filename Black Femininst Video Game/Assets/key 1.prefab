@@ -109,8 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolbox: {fileID: 0}
   destinationObj: {fileID: 0}
-  activated: 0
-  moveSpeed: 0
+  activated: 1
+  moveSpeed: 2
 --- !u!1 &6054543363139535778
 GameObject:
   m_ObjectHideFlags: 0

@@ -1382,9 +1382,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isRunning
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: isOnGround
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -1396,9 +1393,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.07178099
+  m_TransitionDuration: 0.039908558
   m_TransitionOffset: 0
-  m_ExitTime: 0.019079596
+  m_ExitTime: 3.930233e-10
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

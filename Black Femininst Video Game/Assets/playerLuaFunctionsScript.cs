@@ -46,6 +46,9 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("OhSnapDJ", this, typeof(playerLuaFunctionsScript).GetMethod("OhSnapDJ"));
         Lua.RegisterFunction("ReadyGlitterBomb", this, typeof(playerLuaFunctionsScript).GetMethod("ReadyGlitterBomb"));
         Lua.RegisterFunction("GiveUniHair", this, typeof(playerLuaFunctionsScript).GetMethod("GiveUniHair"));
+        Lua.RegisterFunction("CallDJ", this, typeof(playerLuaFunctionsScript).GetMethod("CallDJ"));
+        Lua.RegisterFunction("OhSnapDJ", this, typeof(playerLuaFunctionsScript).GetMethod("OhSnapDJ"));
+
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
     }
@@ -263,10 +266,10 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Instantiate(MargLevel4, new Vector3(156.06f, 10.8f, 0), Quaternion.identity);
     }
 
-    public void OhSnapDJ()
-    {
-        Instantiate(dj, transform.position, Quaternion.identity);
-    }
+    //public void OhSnapDJ()
+    //{
+    //    Instantiate(dj, player.transform.position + new Vector3(0, 4, 0), Quaternion.identity);
+    //}
 
     public void Level2MargHmph()
     {
@@ -281,5 +284,15 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void GiveUniHair()
     {
         player.GetComponent<playerScript>().GiveHair();
+    }
+
+    public void CallDJ()//for the theater scene when he says something about a white background
+    {
+        GetComponent<playerScript>().EnterDJ();
+    }
+
+    public void OhSnapDJ()
+    {
+        player.GetComponent<playerScript>().OhSNapDJ();
     }
 }

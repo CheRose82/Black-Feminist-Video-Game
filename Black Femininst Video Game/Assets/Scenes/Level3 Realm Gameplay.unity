@@ -2891,6 +2891,12 @@ PrefabInstance:
       propertyPath: crackMirror
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3348741383788996930, guid: 55dfd302ddca446f58eadad72bb1fcaf,
+        type: 3}
+      propertyPath: dj
+      value: 
+      objectReference: {fileID: 1232796012200428335, guid: 3d061ce0e73764fc3ac5656960c5b212,
+        type: 3}
     - target: {fileID: 3348741383788996956, guid: 55dfd302ddca446f58eadad72bb1fcaf,
         type: 3}
       propertyPath: m_Name
@@ -5997,7 +6003,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858258992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6792,12 +6798,12 @@ PrefabInstance:
     - target: {fileID: 1232796012200428331, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 231
+      value: 209.2
       objectReference: {fileID: 0}
     - target: {fileID: 1232796012200428331, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.3
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 1232796012200428331, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}
@@ -6847,17 +6853,17 @@ PrefabInstance:
     - target: {fileID: 1232796012200428331, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.76087
+      value: 0.5764123
       objectReference: {fileID: 0}
     - target: {fileID: 1232796012200428331, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.76087
+      value: 0.5764123
       objectReference: {fileID: 0}
     - target: {fileID: 1232796012200428331, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.76087
+      value: 0.5764123
       objectReference: {fileID: 0}
     - target: {fileID: 1232796012200428335, guid: 3d061ce0e73764fc3ac5656960c5b212,
         type: 3}

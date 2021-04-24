@@ -16,7 +16,7 @@ public class DjScript : MonoBehaviour
         {
             if(levelPart == 1)
             {
-                transform.position = new Vector3(230, 6.6f, 0);
+                transform.position = new Vector3(225, 6.6f, 0);
                 gliding = true;
                 Invoke(nameof(DJDeath), 15);
             }
@@ -29,6 +29,7 @@ public class DjScript : MonoBehaviour
             
         }
         Sparkle();
+        gliding = true;
     }
 
     // Update is called once per frame

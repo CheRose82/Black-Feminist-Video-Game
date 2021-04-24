@@ -31,7 +31,13 @@ public class MirrorControllerScript : MonoBehaviour
         blackoutBox = GameObject.Find("Blackout");
         cmPlane = GameObject.FindGameObjectsWithTag("NicolePlane");
         cmAnim = GameObject.FindGameObjectsWithTag("NicoleAnim");
-        
+
+        //foreach (GameObject m in mirrors)
+        //{
+        //    m.GetComponentInChildren<MeshRenderer>().enabled = false;
+        //}
+            
+
     }
 
     // Update is called once per frame
