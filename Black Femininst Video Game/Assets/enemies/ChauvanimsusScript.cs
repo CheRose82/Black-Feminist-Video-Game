@@ -76,6 +76,8 @@ public class ChauvanimsusScript : MonoBehaviour
     // 8 fly up, then across while dropping enemies
 
     // Start is called before the first frame update
+    public GameObject ChauvAnim;
+    public Animator anim;
     void Start()
     {
         //AI_Behavior = 1;
@@ -103,6 +105,7 @@ public class ChauvanimsusScript : MonoBehaviour
         waitingToDuck = true;
         duckTimer = 1.0f;
         //rb = GetComponent<Rigidbody>();
+        
 
 }
 
@@ -447,6 +450,7 @@ public class ChauvanimsusScript : MonoBehaviour
     public void WalkingTrue()
     {
         walking = true;
+        anim.SetTrigger("stomp");
     }
 
     public void ChangeDir()
@@ -480,11 +484,13 @@ public class ChauvanimsusScript : MonoBehaviour
     public void PunchOne()
     {
         Instantiate(meleeHitBox, meleePos.transform.position, Quaternion.identity);
+        anim.SetTrigger("punch");
     }
     public void PunchTwo()
     {
         Instantiate(meleeHitBox, meleePos.transform.position + new Vector3(-1, 0,0), Quaternion.identity);
         Invoke("DecideNextAI", 1.2f);
+        anim.SetTrigger("punch");
     }
     public void BarrelRollPause()
     {
@@ -496,6 +502,7 @@ public class ChauvanimsusScript : MonoBehaviour
     public void BarrelRoll()
     {
         Instantiate(barrel, transform.position + new Vector3(0, -3.9f, 0), Quaternion.identity);
+        anim.SetTrigger("throwGround");
         //barrelRolled = false;
         Invoke("GoToAI1", 4.0f);
     }
@@ -515,10 +522,12 @@ public class ChauvanimsusScript : MonoBehaviour
 
         //barrelRolled = true;
         Invoke("CanonShoot", 1.0f);
+        anim.SetTrigger("firing");
     }
     public void CanonShoot()
     {
         canonShooting = true;
+        anim.SetTrigger("firing");
     }
 
     public void CanonStop()

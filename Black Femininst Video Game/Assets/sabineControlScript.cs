@@ -12,6 +12,8 @@ public class sabineControlScript : MonoBehaviour
     public GameObject telescope;
 
     public GameObject whiteSabine;
+    public AudioSource sabineSource;
+    public AudioClip sabineClip;
 
 
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class sabineControlScript : MonoBehaviour
         runSpeed = 0.05f;
         whiteSabine = GameObject.Find("sabine white");
         whiteSabine.GetComponent<SpriteRenderer>().enabled = false;
+        sabineSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class sabineControlScript : MonoBehaviour
         {
             transform.Translate(runSpeed, 0, 0);
             anim.SetBool("isRunning", true);
+            
         }
 
         if (Input.GetKeyDown(KeyCode.D))
@@ -68,6 +72,7 @@ public class sabineControlScript : MonoBehaviour
             {
                 rb.velocity = Vector3.up * 7.5f;
                 anim.SetTrigger("jumpTrigger");
+                sabineSource.PlayOneShot(sabineClip, 4);
             }
         }
 

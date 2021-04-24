@@ -292,7 +292,7 @@ public class playerScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             anim.SetBool("isChopping", true);
-            Invoke(nameof(StopChopping), 7);
+            Invoke(nameof(StopChopping), 14);
             Invoke(nameof(StartVoiceParticles), 2);
             //Debug.Log("We touched the axe");
             //animate holding up the Axe

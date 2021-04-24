@@ -24,7 +24,7 @@ public class HorsePartSpawnerScript : MonoBehaviour
         xPos = uniPos.transform.position.x;
         yPos = uniPos.transform.position.y;
         zPos = uniPos.transform.position.z;
-        unicornSpawn = 7f;
+        unicornSpawn = 70f;
         unicorn = GameObject.Find("Black Unicorn");
     }
 
