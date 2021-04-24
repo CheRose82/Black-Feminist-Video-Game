@@ -35,11 +35,17 @@ public class caveFlasher : MonoBehaviour
 
     public bool visibleImages;
 
+    //sound stuff
+    public AudioSource caveSource;
+    public AudioClip caveClip;
+
     // Start is called before the first frame update
     void Start()
     {
         //Instantiate(image1, transform.position, Quaternion.identity);
         timer = 1f;
+        caveSource = GetComponent<AudioSource>();
+        activated = true;
     }
 
     // Update is called once per frame
@@ -65,6 +71,7 @@ public class caveFlasher : MonoBehaviour
                 if(visibleImages == true)
                 {
                     previousImage = Instantiate(currentImage, transform.position, Quaternion.identity);
+                    caveSource.PlayOneShot(caveClip, Random.Range(3f, 5.5f));
                 }
                 
                 Invoke(nameof(DestroyImage), 0.99f);

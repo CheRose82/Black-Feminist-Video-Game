@@ -11,12 +11,16 @@ public class sabineControlScript : MonoBehaviour
     public Animator anim;
     public GameObject telescope;
 
+    public GameObject whiteSabine;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         runSpeed = 0.05f;
+        whiteSabine = GameObject.Find("sabine white");
+        whiteSabine.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -91,6 +95,13 @@ public class sabineControlScript : MonoBehaviour
             //start lookinh in box animation
         }
 
+        //sabina white
+        if (other.CompareTag("Spotlight"))
+        {
+            whiteSabine.GetComponent<SpriteRenderer>().enabled = true;
+            SabineAnim.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -99,6 +110,13 @@ public class sabineControlScript : MonoBehaviour
         {
             grounded = false;
             anim.SetBool("isOnGround", false);
+        }
+
+        //sabina white
+        if (other.CompareTag("Spotlight"))
+        {
+            whiteSabine.GetComponent<SpriteRenderer>().enabled = false;
+            SabineAnim.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
     public void Skel()

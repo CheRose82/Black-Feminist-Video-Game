@@ -15,5 +15,10 @@ public class telescopeToJonas : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 5 * Time.deltaTime);
+
+        if(Vector3.Distance(transform.position, player.transform.position) < 0.1f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

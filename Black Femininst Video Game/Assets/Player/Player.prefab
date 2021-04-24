@@ -211,6 +211,8 @@ GameObject:
   - component: {fileID: 953496567}
   - component: {fileID: 4688655813383660928}
   - component: {fileID: 1470294455}
+  - component: {fileID: 942652924}
+  - component: {fileID: 942652925}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -251,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 0
   jonasAnim: {fileID: 134699119}
+  sabine: {fileID: 0}
   anim: {fileID: 134699120}
   groundProj: {fileID: 1344502793658653423, guid: 7a005587a981045f5979761c4f5b91a1,
     type: 3}
@@ -265,14 +268,32 @@ MonoBehaviour:
   crackMirror: {fileID: 0}
   breakFreeMirror: {fileID: 0}
   DBp50: {fileID: 879285155437882476, guid: 5e6961eba0f4e41d292e74ee5f0e282a, type: 3}
+  DBp38Oww: {fileID: 0}
+  DBp39SeeAllShe: {fileID: 0}
+  axe: {fileID: 0}
   Grounded: 0
   walking: 0
+  dbFindWhat: {fileID: 0}
   facingRight: 1
   readyToShoot: 0
   hasControl: 1
   RideUnicornAttempt: 0
+  canPetUnicorn: 0
   jumpClip: {fileID: 8300000, guid: f3988207a8ae94f05964b1763ac91129, type: 3}
+  energyBallClip: {fileID: 8300000, guid: d8bd87ce690544cc9922b5f02b46d28b, type: 3}
+  goddessClip: {fileID: 8300000, guid: b41b1637a28574c4897cc00cadd39efc, type: 3}
+  SkeletonClip: {fileID: 8300000, guid: 7a3aec709dc2b4b3aa943cc4ef048eea, type: 3}
+  telescopeOn: {fileID: 8300000, guid: b41b1637a28574c4897cc00cadd39efc, type: 3}
+  telescopeOff: {fileID: 8300000, guid: 22c28920f9abb5442a566b9b6d077e18, type: 3}
+  hairClip: {fileID: 8300000, guid: 302e6693f3313f34b86a9ee262cbdf1e, type: 3}
+  groundClip: {fileID: 0}
+  receivedItemClip: {fileID: 8300000, guid: b41b1637a28574c4897cc00cadd39efc, type: 3}
+  horseKickedClip: {fileID: 8300000, guid: 45484bfd721ed524e97fa4617b9855f5, type: 3}
+  mirrorBreakClip: {fileID: 8300000, guid: 2a1d9457615d7db41ac9e1eec282ffbd, type: 3}
   playerSource: {fileID: 0}
+  glassRain: {fileID: 0}
+  womensVoicePart: {fileID: 0}
+  DBpWeDidIt: {fileID: 0}
 --- !u!33 &3348741383788996959
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -405,7 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unregisterOnDisable: 0
-  soundCloudControl: {fileID: 0}
   soundSpawnControl: {fileID: 0}
   bees: {fileID: 0}
   unicorn: {fileID: 0}
@@ -422,10 +442,13 @@ MonoBehaviour:
   player: {fileID: 3348741383788996956}
   sabine: {fileID: 0}
   MargHammer: {fileID: 0}
-  hammer: {fileID: 0}
+  hammer: {fileID: 6553199863535287641, guid: a7f54905440344833b43745672f5b110, type: 3}
   bigDoor: {fileID: 0}
   realmHolder: {fileID: 0}
   MargLevel4: {fileID: 0}
+  dj: {fileID: 0}
+  margHmph: {fileID: 0}
+  breakingMirror: {fileID: 0}
 --- !u!82 &4688655813383660928
 AudioSource:
   m_ObjectHideFlags: 0
@@ -523,6 +546,55 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!114 &1470294455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348741383788996956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c270a07814b407895ed74484e6d901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+--- !u!114 &942652924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348741383788996956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4606f479d69d464b95889a67307dab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unregisterOnDisable: 0
+  soundSpawnControl: {fileID: 0}
+  bees: {fileID: 0}
+  unicorn: {fileID: 0}
+  mirrors: {fileID: 0}
+  AudreyLForrest: {fileID: 0}
+  unicornDialogueBox: {fileID: 0}
+  unicornDialogueBox2: {fileID: 0}
+  toolbox1: {fileID: 0}
+  aUmbrella: {fileID: 0}
+  aTelescope: {fileID: 0}
+  aKey: {fileID: 0}
+  MargLevel2: {fileID: 0}
+  mirrorController: {fileID: 0}
+  player: {fileID: 3348741383788996956}
+  sabine: {fileID: 0}
+  MargHammer: {fileID: 0}
+  hammer: {fileID: 0}
+  bigDoor: {fileID: 0}
+  realmHolder: {fileID: 0}
+  MargLevel4: {fileID: 0}
+  dj: {fileID: 0}
+  margHmph: {fileID: 0}
+  breakingMirror: {fileID: 0}
+--- !u!114 &942652925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

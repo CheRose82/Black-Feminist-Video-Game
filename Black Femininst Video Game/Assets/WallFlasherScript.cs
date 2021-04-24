@@ -33,11 +33,15 @@ public class WallFlasherScript : MonoBehaviour
     public float timer;
     public bool activated;
 
+    public AudioSource flasherSource;
+    public AudioClip flashClip;
+
     // Start is called before the first frame update
     void Start()
     {
         //Instantiate(image1, transform.position, Quaternion.identity);
         timer = 2f;
+        flasherSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,7 +54,8 @@ public class WallFlasherScript : MonoBehaviour
             {
                 RandomImage();
                 previousImage = Instantiate(currentImage, transform.position, Quaternion.identity);
-                Invoke(nameof(DestroyImage), 0.13f);
+                flasherSource.PlayOneShot(flashClip, 5);
+                Invoke(nameof(DestroyImage), 0.75f);
                 timer = 2f;
             }
         }

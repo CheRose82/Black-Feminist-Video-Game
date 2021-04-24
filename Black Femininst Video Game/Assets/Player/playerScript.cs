@@ -40,11 +40,23 @@ public class playerScript : MonoBehaviour
 
     //sfx
     public AudioClip jumpClip;
+    public AudioClip energyBallClip;
+    public AudioClip goddessClip;
+    public AudioClip SkeletonClip;
+    public AudioClip telescopeOn;
+    public AudioClip telescopeOff;
+    public AudioClip hairClip;
+    public AudioClip groundClip;
+    public AudioClip receivedItemClip;
+    public AudioClip horseKickedClip;
+    public AudioClip mirrorBreakClip;
+
     public AudioSource playerSource;
 
     public GameObject glassRain;
     public GameObject womensVoicePart;
     public GameObject DBpWeDidIt;
+    public GameObject whiteJonas;
     
     // Start is called before the first frame update
     void Start()
@@ -53,11 +65,14 @@ public class playerScript : MonoBehaviour
         runSpeed = 0.05f;
         rb = GetComponent<Rigidbody>();
         //nicole = GameObject.Find("Nicole");
-        facingRight = true;readyToShoot = true;
+        facingRight = true;
+        readyToShoot = true;
         hasControl = true;
         breakFreeMirror = GameObject.Find("Mirror Break Free");
         axe = GameObject.Find("axe");
         sabine = GameObject.Find("Sabine");
+        whiteJonas = GameObject.Find("jonas white");
+        whiteJonas.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -145,6 +160,9 @@ public class playerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ShootEnergyBall();
+            playerSource.PlayOneShot(energyBallClip, 7);
+            
+
         }
 
         //goddess pose
@@ -153,6 +171,7 @@ public class playerScript : MonoBehaviour
             anim.SetBool("isRunning", false);
             anim.SetBool("isOnGround", true);
             anim.SetTrigger("goddessTrigger");
+            playerSource.PlayOneShot(goddessClip, 7);
         }
 
         //dacne
@@ -190,16 +209,19 @@ public class playerScript : MonoBehaviour
         {
             Bones();
             sabine.GetComponent<sabineControlScript>().Skel();
+            playerSource.PlayOneShot(SkeletonClip, 7);
             
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             anim.SetBool("usingTelescope", false);
+            playerSource.PlayOneShot(telescopeOn, 7);
         }
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             anim.SetBool("usingTelescope", true);
+            playerSource.PlayOneShot(telescopeOff, 7);
         }
 
         if (Input.GetKeyDown(KeyCode.V))
@@ -210,6 +232,7 @@ public class playerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             GiveHair();
+            playerSource.PlayOneShot(hairClip, 5);
         }
 
 
@@ -234,6 +257,7 @@ public class playerScript : MonoBehaviour
             anim.SetBool("isOnGround", true);
             Grounded = true;
             rb.velocity = Vector3.zero;
+            playerSource.PlayOneShot(groundClip, 4);
         }
 
         if (other.CompareTag("NicoleAct"))
@@ -272,6 +296,7 @@ public class playerScript : MonoBehaviour
             Invoke(nameof(StartVoiceParticles), 2);
             //Debug.Log("We touched the axe");
             //animate holding up the Axe
+            playerSource.PlayOneShot(receivedItemClip, 7);
         }
 
         //unicorn
@@ -307,6 +332,13 @@ public class playerScript : MonoBehaviour
             
         }
 
+        //white Jonas come
+        if (other.CompareTag("Spotlight"))
+        {
+            jonasAnim.GetComponent<SpriteRenderer>().enabled = false;
+            whiteJonas.GetComponent<SpriteRenderer>().enabled = true;
+        }
+
        
     }
 
@@ -316,6 +348,13 @@ public class playerScript : MonoBehaviour
         {
             anim.SetBool("isOnGround", false);
             Grounded = false;
+        }
+
+        //white Jonas come
+        if (other.CompareTag("Spotlight"))
+        {
+            jonasAnim.GetComponent<SpriteRenderer>().enabled = true;
+            whiteJonas.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
@@ -329,10 +368,12 @@ public class playerScript : MonoBehaviour
                 if (facingRight == true)
                 {
                     Instantiate(groundProj, rightNozzle.transform.position, rightNozzle.transform.rotation);
+                    playerSource.PlayOneShot(energyBallClip, 7);
                 }
                 else
                 {
                     Instantiate(groundProj, leftNozzle.transform.position, leftNozzle.transform.rotation);
+                    playerSource.PlayOneShot(energyBallClip, 7);
                 }
 
             }
@@ -341,10 +382,12 @@ public class playerScript : MonoBehaviour
                 if (facingRight == true)
                 {
                     Instantiate(airProj, rightNozAir.transform.position, rightNozAir.transform.rotation);
+                    playerSource.PlayOneShot(energyBallClip, 7);
                 }
                 else
                 {
                     Instantiate(airProj, leftNozAir.transform.position, leftNozAir.transform.rotation);
+                    playerSource.PlayOneShot(energyBallClip, 7);
                 }
             }
 
@@ -391,6 +434,7 @@ public class playerScript : MonoBehaviour
     {
         rb.AddForce(-700, 150, 0);
         KickedAnim();
+        playerSource.PlayOneShot(horseKickedClip, 7);
     }
 
     public void GlitterBomb()
@@ -398,6 +442,7 @@ public class playerScript : MonoBehaviour
         unicorn.GetComponent<BlackUnicornScript>().GBomb();
         rb.AddForce(-200, 100, 0);
         Invoke("HeyWatchItDB", 0.5f);
+        playerSource.PlayOneShot(horseKickedClip, 7);
     }
 
     public void HeyWatchItDB()
@@ -433,6 +478,7 @@ public class playerScript : MonoBehaviour
     public void MirrorBreaks()
     {
         crackMirror.GetComponent<MirrorBreaks>().CrackMirror();
+        playerSource.PlayOneShot(mirrorBreakClip, 7);
     }
 
     public void BreakFreeMirror()

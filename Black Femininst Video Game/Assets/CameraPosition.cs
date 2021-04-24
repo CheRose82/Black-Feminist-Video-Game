@@ -32,7 +32,7 @@ public class CameraPosition : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+        if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.N))
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2.5f);
             

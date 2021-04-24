@@ -182,7 +182,7 @@ public class BlackUnicornScript : MonoBehaviour
         //player.GetComponent<Rigidbody>().AddForce(-300, 70, 0);
 
         StopIdle();
-        anim.transform.localEulerAngles = new Vector3(0, 180, 0);
+        anim.transform.localEulerAngles = new Vector3(0, 0, 0);
         anim.SetBool("iisSneezing", true);
         Invoke(nameof(GoIdle), 1);
         Debug.Log("The glitter bomb happened on the horse side");
