@@ -10,6 +10,7 @@ public class bewareSignScript : MonoBehaviour
     public float bigX;
     public float bigY;
     public float bigZ;
+    public GameObject db;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,10 @@ public class bewareSignScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Sabine"))
+        if (other.CompareTag("Sabine")|| other.CompareTag("Player"))
         {
             transform.localScale = new Vector3(bigX, bigY, bigZ);
+            Instantiate(db, transform.position, Quaternion.identity);
         }
     }
 

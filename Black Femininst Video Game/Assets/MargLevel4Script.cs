@@ -6,16 +6,21 @@ public class MargLevel4Script : MonoBehaviour
 {
     public GameObject dbFinal;
     public GameObject margAnim;
+    public GameObject chauv;
     public Animator anim;
     public int level;
     public int levelPart;
     public bool leaving;
+    public GameObject particle;
     // Start is called before the first frame update
     void Start()
     {
+        chauv = GameObject.Find("Chauvanismus");
+        Destroy(chauv);
         if(level == 4)
         {
-            Instantiate(dbFinal, transform.position, Quaternion.identity);
+            Instantiate(dbFinal, transform.position + new Vector3(-1, -100, 0), Quaternion.identity);
+            transform.position = new Vector3(156, 8, 0);
         }
 
         if(level == 2)

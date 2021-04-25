@@ -29,8 +29,15 @@ public class bossDoorScript : MonoBehaviour
             border.transform.position = new Vector3(border.transform.position.x, 7, border.transform.position.z);
             doorFalling = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
+
+    
     public void DoorVanish()//door vanishes and players get blasted into the level
     {
         Instantiate(magicPart, transform.position, Quaternion.identity);
@@ -38,4 +45,6 @@ public class bossDoorScript : MonoBehaviour
         sabine.GetComponent<Rigidbody>().AddForce(1200, 250, 0);
         doorFalling = true;
     }
+
+
 }

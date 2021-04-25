@@ -47,7 +47,7 @@ MonoBehaviour:
   thisPos: {x: 0, y: 0, z: 0}
   riseSpeed: 20
   behavior: 0
-  sparkle: {fileID: 8207911536054843594, guid: f4b7bb7155007462db82bd11ef7365aa, type: 3}
+  sparkle: {fileID: 1000013967635414, guid: 0ab55775e6458e944a57a5cf69c4b398, type: 3}
 --- !u!1 &1944805563549685767
 GameObject:
   m_ObjectHideFlags: 0

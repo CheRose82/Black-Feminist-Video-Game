@@ -48,6 +48,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
         Lua.RegisterFunction("GiveUniHair", this, typeof(playerLuaFunctionsScript).GetMethod("GiveUniHair"));
         Lua.RegisterFunction("CallDJ", this, typeof(playerLuaFunctionsScript).GetMethod("CallDJ"));
         Lua.RegisterFunction("OhSnapDJ", this, typeof(playerLuaFunctionsScript).GetMethod("OhSnapDJ"));
+        Lua.RegisterFunction("GiveAxe4", this, typeof(playerLuaFunctionsScript).GetMethod("GiveAxe4"));
 
 
         //Lua.RegisterFunction("MirrorsFlying", this, typeof(playerLuaFunctionsScript).GetMethod("MirrorsFlying"));
@@ -98,6 +99,7 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public GameObject dj;
     public GameObject margHmph;
     public GameObject breakingMirror;
+    public GameObject henchMen;
     
 
 
@@ -294,5 +296,10 @@ public class playerLuaFunctionsScript : MonoBehaviour
     public void OhSnapDJ()
     {
         player.GetComponent<playerScript>().OhSNapDJ();
+    }
+
+    public void GiveAxe4()
+    {
+        henchMen.GetComponent<HenchmenSpawnerScript>().GiveAxeL4();
     }
 }

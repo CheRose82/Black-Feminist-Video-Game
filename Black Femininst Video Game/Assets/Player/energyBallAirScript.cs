@@ -31,5 +31,18 @@ public class energyBallAirScript : MonoBehaviour
             Instantiate(regExplosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+
+        if (other.CompareTag("Chauv"))
+        {
+            Instantiate(regExplosion, transform.position, Quaternion.identity);
+            Invoke(nameof(Die), .1f);
+        }
+
+
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
     }
 }

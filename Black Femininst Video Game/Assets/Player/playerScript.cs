@@ -227,11 +227,11 @@ public class playerScript : MonoBehaviour
             anim.SetBool("usingTelescope", false);
             playerSource.PlayOneShot(telescopeOn, 7);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            anim.SetBool("usingTelescope", true);
-            playerSource.PlayOneShot(telescopeOff, 7);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha9))
+        //{
+        //    anim.SetBool("usingTelescope", true);
+        //    playerSource.PlayOneShot(telescopeOff, 7);
+        //}
 
         if (Input.GetKeyDown(KeyCode.V))
         {
@@ -242,6 +242,21 @@ public class playerScript : MonoBehaviour
         {
             GiveHair();
             playerSource.PlayOneShot(hairClip, 5);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            anim.SetBool("isChopping", true);
+            Invoke(nameof(StopChopping), 14);
+            Invoke(nameof(StartVoiceParticles), 2);
+
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                anim.SetBool("isChopping", false);
+            }
         }
 
 
