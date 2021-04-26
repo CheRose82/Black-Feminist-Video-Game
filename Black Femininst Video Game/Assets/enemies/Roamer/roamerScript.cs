@@ -9,6 +9,7 @@ public class roamerScript : MonoBehaviour
     public GameObject front;
     public GameObject projectile;
     public GameObject deathExpl;
+    public GameObject deathSound;
     public float distanceToPlayer;
     public float walkSpeed;
     public bool activated;
@@ -142,6 +143,9 @@ public class roamerScript : MonoBehaviour
     {
         //plan animation, Invoke the explosion afterward
         DeathExplosion();
+
+        //play the sound effect
+        Instantiate(deathSound, transform.position, Quaternion.identity);
 
         //then destroy the object
         Destroy(this.gameObject);

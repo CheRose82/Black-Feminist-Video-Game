@@ -5,6 +5,7 @@ using UnityEngine;
 public class whitenessSpawnerScript : MonoBehaviour
 {
     public float spawnRate;
+    public float spawnRateReset;
     public bool spawning;
     public int whichImage;
     public GameObject currentImage;
@@ -21,7 +22,8 @@ public class whitenessSpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnRate = 1f;
+        spawnRate = 2.8f;
+        spawnRateReset = 2.8f;
         spawning = true;
     }
 
@@ -30,10 +32,11 @@ public class whitenessSpawnerScript : MonoBehaviour
     {
         if (spawning)
         {
-            spawnRate -= Time.deltaTime;
+            spawnRate -= Time.fixedDeltaTime;
             if(spawnRate < 0)
             {
                 ChooseAndSpawn();
+                spawnRate = spawnRateReset;
             }
         }
     }

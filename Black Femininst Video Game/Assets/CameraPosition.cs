@@ -42,13 +42,13 @@ public class CameraPosition : MonoBehaviour
             if(playerObj.GetComponent<playerScript>().facingRight == true)
             {
                 Vector3 playerPosition = player.position + offset;
-                Vector3 newPosition = new Vector3(player.position.x + 4.5f, transform.position.y, transform.position.z);
+                Vector3 newPosition = new Vector3(player.position.x + 2.5f, transform.position.y, transform.position.z);
                 transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
             }
             else
             {
                 Vector3 playerPosition = player.position + offset;
-                Vector3 newPosition = new Vector3(player.position.x - 4.5f, transform.position.y, transform.position.z);
+                Vector3 newPosition = new Vector3(player.position.x - 2.5f, transform.position.y, transform.position.z);
                 transform.position = Vector3.Lerp(transform.position, newPosition, smoothFactor * Time.fixedDeltaTime);
             }
 

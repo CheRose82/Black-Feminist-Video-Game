@@ -15,10 +15,10 @@ public class ScrollingWhitenessScript : MonoBehaviour
     {
         sr = GetComponentInChildren<SpriteRenderer>();
 
-        Invoke(nameof(Die), expireTimer);
+        //Invoke(nameof(Die), expireTimer);
 
         //test speeds
-        scrollSpeed = .1f;
+        scrollSpeed = .02f;
         expireTimer = 10;
 
         source = GameObject.Find("Whiteness Image Source");
@@ -31,17 +31,25 @@ public class ScrollingWhitenessScript : MonoBehaviour
         {
             PicsOff();
         }
+        //Debug.Break();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(0, scrollSpeed, 0);
+
+        expireTimer -= Time.deltaTime;
+        if(expireTimer < 0)
+        {
+            Die();
+        }
     }
 
     void Die()
     {
         Destroy(this.gameObject);
+        Debug.Log("pic died");
     }
 
     public void PicsOff()

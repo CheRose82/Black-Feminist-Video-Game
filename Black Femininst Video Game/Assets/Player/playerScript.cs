@@ -227,11 +227,11 @@ public class playerScript : MonoBehaviour
             anim.SetBool("usingTelescope", false);
             playerSource.PlayOneShot(telescopeOn, 7);
         }
-        //if (Input.GetKeyDown(KeyCode.Alpha9))
-        //{
-        //    anim.SetBool("usingTelescope", true);
-        //    playerSource.PlayOneShot(telescopeOff, 7);
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            anim.SetBool("usingTelescope", true);
+            playerSource.PlayOneShot(telescopeOff, 7);
+        }
 
         if (Input.GetKeyDown(KeyCode.V))
         {

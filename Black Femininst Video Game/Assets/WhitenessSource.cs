@@ -9,7 +9,7 @@ public class WhitenessSource : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        whiteVisible = true;
     }
 
     // Update is called once per frame
