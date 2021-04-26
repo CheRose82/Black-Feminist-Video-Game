@@ -36,7 +36,7 @@ public class HenchmenSpawnerScript : MonoBehaviour
 
                 Instantiate(DBAreThoseInternetTrolls, transform.position, Quaternion.identity);
 
-                Invoke(nameof(Iteration2), 8);
+                Invoke(nameof(Iteration2), 10);
 
             }
 
